@@ -1,0 +1,41 @@
+{
+    "/output_gate_1/node_5": {
+        "type": "output",
+        "sub_directions": {
+          "001": {
+            "side": 1,
+            "container": {
+              "type": "dropoff-box",
+              "blocking_nodes": []
+            }
+          }
+        }
+      },
+      "/output_gate_1/node_7": {
+        "type": "output",
+        "sub_directions": {
+          "002": {
+            "side": 1,
+            "container": {
+              "type": "dropoff-box",
+              "blocking_nodes": []
+            }
+          }
+        }
+      },
+      "/output_gate_1/node_3": {
+        "type": "output",
+        "sub_directions": {
+          "reject": {
+            "side": 1,
+            "container": {
+              "type": "dropoff-box",
+              "blocking_nodes": []
+            }
+          }
+        }
+      },
+      "/output_gate_1/node_1": {
+        "type": "input"
+      }
+}

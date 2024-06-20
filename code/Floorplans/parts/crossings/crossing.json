@@ -1,0 +1,244 @@
+{
+    "zones": [
+      {
+        "id": "cross_gate",
+        "constraints": {
+          "max_corner_size": 1,
+          "max_lateral_acceleration": 0.8,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 0.8,
+          "max_velocity": 0.8,
+          "max_yaw_rate": 2,
+          "max_yaw_acceleration": 2
+        },
+        "pose": [
+          0.0,
+          0.0,
+          1.57
+        ],
+        "type": "fixed",
+        "nodes": [
+          {
+            "id": "/input_gate_1/c339hw",
+            "type": "entry_and_exit",
+            "clear_distance": 0.2,
+            "pose": [
+              -5.988324324434469,
+              -0.7038933703078856,
+              1.5692036732100005
+            ],
+            "connections": [
+              {
+                "reachable_from": [],
+                "connects_to": "axqhhu",
+                "blocking_neighbours": [],
+                "control_points": [],
+                "type": "entry"
+              }
+            ]
+          },
+          {
+            "id": "/input_gate_1/8z6mhp",
+            "type": "entry_and_exit",
+            "clear_distance": 0.2,
+            "pose": [
+              -4.988324958570699,
+              -0.7030970438496422,
+              1.5692036732100005
+            ],
+            "connections": [
+              {
+                "reachable_from": [],
+                "connects_to": "nrxp8a",
+                "blocking_neighbours": [],
+                "control_points": [],
+                "type": "entry"
+              }
+            ]
+          },
+          {
+            "id": "jx9b9c",
+            "type": "entry_and_exit",
+            "clear_distance": 0.1,
+            "pose": [
+              -5.988706562545065,
+              4.7761080627971175,
+              1.5692036732100005
+            ],
+            "connections": []
+          },
+          {
+            "id": "xg1pws",
+            "type": "entry_and_exit",
+            "clear_distance": 0.1,
+            "pose": [
+              -4.9887071966813,
+              4.776904389260257,
+              1.5692036732100012
+            ],
+            "connections": []
+          },
+          {
+            "id": "65pcf1",
+            "type": "init",
+            "clear_distance": 0.05,
+            "pose": [
+              -5.490078240737878,
+              1.4965040939929155,
+              1.13
+            ],
+            "connections": [
+              {
+                "connects_to": "caejlm",
+                "reachable_from": [
+                  "axqhhu"
+                ],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          },
+          {
+            "id": "nrxp8a",
+            "type": "init",
+            "clear_distance": 0.2,
+            "pose": [
+              -4.9884842241704295,
+              0.49690320980478564,
+              1.5692036732100012
+            ],
+            "connections": [
+              {
+                "connects_to": "x8b0k0",
+                "reachable_from": [],
+                "type": "normal",
+                "blocking_neighbours": [
+                  "65pcf1"
+                ],
+                "control_points": [
+                  {
+                    "pose": [
+                      -5.4885237236962165,
+                      1.546505347790316,
+                      2.01
+                    ],
+                    "blocking_neighbour": [],
+                    "clear_distance": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "x8b0k0",
+            "type": "init",
+            "clear_distance": 0.1,
+            "pose": [
+              -5.988563223222004,
+              2.596107485775846,
+              1.5692036732100012
+            ],
+            "connections": [
+              {
+                "connects_to": "4gyl65",
+                "reachable_from": [
+                  "nrxp8a"
+                ],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          },
+          {
+            "id": "caejlm",
+            "type": "init",
+            "clear_distance": 0.1,
+            "pose": [
+              -4.988563857358234,
+              2.596903812234089,
+              1.5692036732100014
+            ],
+            "connections": [
+              {
+                "connects_to": "609u39",
+                "reachable_from": [
+                  "65pcf1"
+                ],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          },
+          {
+            "id": "axqhhu",
+            "type": "init",
+            "clear_distance": 0.2,
+            "pose": [
+              -5.988483590034198,
+              0.4961068833465423,
+              1.5692036732100005
+            ],
+            "connections": [
+              {
+                "connects_to": "65pcf1",
+                "reachable_from": [],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          },
+          {
+            "id": "4gyl65",
+            "type": "init",
+            "clear_distance": 0.1,
+            "pose": [
+              -5.988674709219055,
+              3.736107758411779,
+              1.5692036732100005
+            ],
+            "connections": [
+              {
+                "connects_to": "jx9b9c",
+                "reachable_from": [
+                  "x8b0k0"
+                ],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          },
+          {
+            "id": "609u39",
+            "type": "init",
+            "clear_distance": 0.1,
+            "pose": [
+              -4.988675343355291,
+              3.7369040848749187,
+              1.5692036732100012
+            ],
+            "connections": [
+              {
+                "connects_to": "xg1pws",
+                "reachable_from": [
+                  "caejlm"
+                ],
+                "type": "normal",
+                "blocking_neighbours": [],
+                "control_points": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "info": {
+      "version": "0.0.1",
+      "changelog": "",
+      "design_tool_version": "v1.2.1"
+    }
+  }
