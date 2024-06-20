@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Rectangle, PathPatch
 from matplotlib.path import Path
 
-from lib.floorplan import Floorplan
+from floorplan import Floorplan
 
 base_style = {
     "node": {

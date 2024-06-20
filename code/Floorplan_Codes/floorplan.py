@@ -16,7 +16,7 @@ class Floorplan:
         self.cells = {}
         self.directions = {}
         self.parse_zones_nodes(data_path)
-        #self.parse_directions()
+        # self.parse_directions()
 
     def parse_zones_nodes(self, data_path: str):
         with open(data_path, "r") as json_file:
