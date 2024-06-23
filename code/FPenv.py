@@ -21,7 +21,7 @@ from rl4co.utils.pylogger import get_pylogger
 
 log = get_pylogger(__name__)
 
-from utils import compute_manhattan_distance, generate_adjacency_matrix
+from utils import compute_manhattan_distance, generate_adjacency_matrix, generate_adjacency_matrix_FP
 
 # Import codes to read JSON floorplan
 from Floorplan_Codes.floorplan import Floorplan
