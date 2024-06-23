@@ -413,8 +413,10 @@ def render(self, td, actions=None, ax=None):
 def processFP(self, fp_path: str):
     # Read the floorplan in the floorplan path
     self.fp = Floorplan(fp_path)
+    # Get all cells as a dictionary in fp
+    self.all_cells = self.fp.getCells()
     # The cells in fp is stored as dictionary, put them into a cell list to retain orders
-    self.cellsList = [cell for cell in self.fp.getCells().values()]
+    self.cellsList = [cell for cell in self.all_cells.values()]
     # Read the positions of the cells stored in the cellsArr (with order), and save to 2D tensor
     poses = [cell.pose for cell in self.cellsList]
     self.locs = torch.tensor(poses, dtype=torch.float32)
@@ -422,10 +424,8 @@ def processFP(self, fp_path: str):
 def generate_adjacency_matrix_FP(self):
     # Get the number of nodes
     n = len(self.cellsList)
-
     # Initialize an empty adjacency matrix
     adjacency_matrix = np.zeros((n*n, n*n))
-
     # Iterate over each node
     for i in range(n):
         # The current cell to inspect connections
@@ -433,8 +433,9 @@ def generate_adjacency_matrix_FP(self):
         for j in range(n):
             for connection in cell.connections:
                 neighbor_id = f'/{cell.getZoneId()}/{connection["connects_to"]}'
-                if neighbor_id not in self.fp.getCells():
+                if neighbor_id not in self.all_cells:
                     continue
+
 
     return adjacency_matrix
 
