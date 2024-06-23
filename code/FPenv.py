@@ -430,11 +430,15 @@ def generate_adjacency_matrix_FP(self):
     for i in range(n):
         # The current cell to inspect connections
         cell = self.cellsList[i]
-        for j in range(n):
-            for connection in cell.connections:
-                neighbor_id = f'/{cell.getZoneId()}/{connection["connects_to"]}'
-                if neighbor_id not in self.all_cells:
-                    continue
+        # For all neighbors:
+        for connection in cell.connections:
+            # Get neighbor's id
+            neighbor_id = f'/{cell.getZoneId()}/{connection["connects_to"]}'
+            # If neighbor does not exist, continue
+            if neighbor_id not in self.all_cells:
+                continue
+            neighbor = self.all_cells[neighbor_id]
+
 
 
     return adjacency_matrix
