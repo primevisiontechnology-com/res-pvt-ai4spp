@@ -415,17 +415,25 @@ def processFP(self, fp_path: str):
     self.fp = Floorplan(fp_path)
     # Get all cells as a dictionary in fp
     self.all_cells = self.fp.getCells()
-    # The cells in fp is stored as dictionary, put them into a cell list to retain orders
-    self.cellsList = [cell for cell in self.all_cells.values()]
+
+    # Put cell ids (keys) in dict into a cell list
+    idList = list(self.all_cells.keys())
+    # Put the ids into a dictionary (key: id; value: index) for fast indexing
+    self.idDic = {}
+    for i in range(len(idList)):
+        self.idDic[idList[i]] = i
+
+    # Put cells (values) in dict into a cell list
+    self.cellsList = list(self.all_cells.values())
     # Read the positions of the cells stored in the cellsArr (with order), and save to 2D tensor
     poses = [cell.pose for cell in self.cellsList]
     self.locs = torch.tensor(poses, dtype=torch.float32)
 
 def generate_adjacency_matrix_FP(self):
     # Get the number of nodes
-    n = len(self.cellsList)
+    n = len(self.all_cells)
     # Initialize an empty adjacency matrix
-    adjacency_matrix = np.zeros((n*n, n*n))
+    adjacency_matrix = np.zeros((n, n))
     # Iterate over each node
     for i in range(n):
         # The current cell to inspect connections
@@ -437,6 +445,7 @@ def generate_adjacency_matrix_FP(self):
             # If neighbor does not exist, continue
             if neighbor_id not in self.all_cells:
                 continue
+            # Get neighbor cell
             neighbor = self.all_cells[neighbor_id]
 
 
