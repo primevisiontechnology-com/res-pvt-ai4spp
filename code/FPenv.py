@@ -434,10 +434,12 @@ def generate_adjacency_matrix_FP(self):
     n = len(self.all_cells)
     # Initialize an empty adjacency matrix
     adjacency_matrix = np.zeros((n, n))
+
     # Iterate over each node
     for i in range(n):
         # The current cell to inspect connections
         cell = self.cellsList[i]
+
         # For all neighbors:
         for connection in cell.connections:
             # Get neighbor's id
@@ -445,10 +447,14 @@ def generate_adjacency_matrix_FP(self):
             # If neighbor does not exist, continue
             if neighbor_id not in self.all_cells:
                 continue
+
+            # Get neighbor's index based on id
+            neighbor_index = self.idDic[neighbor_id]
             # Get neighbor cell
             neighbor = self.all_cells[neighbor_id]
 
-
+            # Mark the corresponding position in the adjacency_matrix as 1
+            adjacency_matrix[i, neighbor_index] = 1
 
     return adjacency_matrix
 
