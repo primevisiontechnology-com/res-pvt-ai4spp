@@ -250,36 +250,23 @@ def _make_spec(self, td_params):
 def generate_data(self, batch_size) -> TensorDict:
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
-
-    grid_size = int(self.num_loc ** (1 / 2))
-
-    # Generate normalize locations for the nodes
-    grid_indices = torch.arange(grid_size)
-    x, y = torch.meshgrid(grid_indices, grid_indices, indexing="ij")
-    locs = torch.stack((x.flatten().float() / grid_size, y.flatten().float() / grid_size), dim=1)
-
     # Add batch dimension and repeat the locs tensor for each item in the batch
-    locs = locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
 
+    # Generate edges tensors
+    edges = torch.zeros((batch_size, self.num_loc, self.num_loc), dtype=torch.bool)
     # Generate the adjacency matrix
-    edges = torch.zeros((batch_size, grid_size * grid_size, grid_size * grid_size), dtype=torch.bool)
-    adjacency_matrix = generate_adjacency_matrix(grid_size)
+    adjacency_matrix = self.generate_adjacency_matrix_fp()
+    # Convert the adjacency matrix into a PyTorch tensor with a data type of torch.bool
     adjacency_matrix = torch.tensor(adjacency_matrix, dtype=torch.bool)
+    # Add a Batch Dimension and Repeat the Tensor
     adjacency_matrix = adjacency_matrix.unsqueeze(0).repeat(batch_size, 1, 1)
+    # Assign the Tensor to edges
     edges[:] = adjacency_matrix
 
-
-    # # Define obstacle probability
-    # obstacle_probability = 0.05
-
-    # Add obstacles to the adjacency matrix
-    obstacle_matrix = torch.rand((batch_size, grid_size * grid_size, grid_size * grid_size)) < obstacle_probability
-    edges[obstacle_matrix] = 0  # 0 represents an obstacle
-    edges[obstacle_matrix.transpose(1, 2)] = 0
-
     batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
-
-    return TensorDict({"locs": locs, "edges": edges}, batch_size=batch_size)
+    
+    return TensorDict({"locs": self.locs, "edges": edges}, batch_size=batch_size)
 
 
 def plot_graph(self, locs, edges, ax=None):
@@ -410,7 +397,8 @@ def render(self, td, actions=None, ax=None):
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
 
-def processFP(self, fp_path: str):
+
+def process_fp(self, fp_path: str):
     # Read the floorplan in the floorplan path
     self.fp = Floorplan(fp_path)
     # Get all cells as a dictionary in fp
@@ -431,7 +419,8 @@ def processFP(self, fp_path: str):
     poses = [cell.pose for cell in self.cellsList]
     self.locs = torch.tensor(poses, dtype=torch.float32)
 
-def generate_adjacency_matrix_FP(self):
+
+def generate_adjacency_matrix_fp(self):
     # Initialize an empty adjacency matrix
     adjacency_matrix = np.zeros((self.num_loc, self.num_loc))
 
@@ -458,6 +447,7 @@ def generate_adjacency_matrix_FP(self):
 
     return adjacency_matrix
 
+
 class FPEnv(RL4COEnvBase):
     """Traveling Salesman Problem (TSP) environment"""
 
@@ -474,7 +464,7 @@ class FPEnv(RL4COEnvBase):
         super().__init__(**kwargs)
         self.min_loc = min_loc
         self.max_loc = max_loc
-        self.processFP(fp_path)
+        self.process_fp(fp_path)
         self._make_spec(td_params)
 
     _reset = _reset
@@ -485,3 +475,5 @@ class FPEnv(RL4COEnvBase):
     _make_spec = _make_spec
     generate_data = generate_data
     render = render
+    process_fp = process_fp
+    generate_adjacency_matrix_fp = generate_adjacency_matrix_fp
