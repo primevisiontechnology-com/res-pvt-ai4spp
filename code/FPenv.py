@@ -415,6 +415,8 @@ def processFP(self, fp_path: str):
     self.fp = Floorplan(fp_path)
     # Get all cells as a dictionary in fp
     self.all_cells = self.fp.getCells()
+    # Get the number of cells
+    self.num_loc = len(self.all_cells)
 
     # Put cell ids (keys) in dict into a cell list
     idList = list(self.all_cells.keys())
@@ -430,13 +432,11 @@ def processFP(self, fp_path: str):
     self.locs = torch.tensor(poses, dtype=torch.float32)
 
 def generate_adjacency_matrix_FP(self):
-    # Get the number of nodes
-    n = len(self.all_cells)
     # Initialize an empty adjacency matrix
-    adjacency_matrix = np.zeros((n, n))
+    adjacency_matrix = np.zeros((self.num_loc, self.num_loc))
 
     # Iterate over each node
-    for i in range(n):
+    for i in range(self.num_loc):
         # The current cell to inspect connections
         cell = self.cellsList[i]
 
@@ -465,7 +465,6 @@ class FPEnv(RL4COEnvBase):
 
     def __init__(
             self,
-            num_loc: int = 20,
             min_loc: float = 0,
             max_loc: float = 1,
             td_params: TensorDict = None,
@@ -473,7 +472,6 @@ class FPEnv(RL4COEnvBase):
             **kwargs,
     ):
         super().__init__(**kwargs)
-        self.num_loc = num_loc
         self.min_loc = min_loc
         self.max_loc = max_loc
         self.processFP(fp_path)
