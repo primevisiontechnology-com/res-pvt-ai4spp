@@ -21,7 +21,7 @@ from rl4co.utils.pylogger import get_pylogger
 
 log = get_pylogger(__name__)
 
-from utils import compute_manhattan_distance, generate_adjacency_matrix, generate_adjacency_matrix_FP
+from utils import compute_manhattan_distance, generate_adjacency_matrix
 
 # Import codes to read JSON floorplan
 from Floorplan_Codes.floorplan import Floorplan
@@ -413,11 +413,36 @@ def render(self, td, actions=None, ax=None):
 def processFP(self, fp_path: str):
     # Read the floorplan in the floorplan path
     self.fp = Floorplan(fp_path)
-    # The cells in fp is stored as dictionary, put them into a cell array to retain orders
-    self.cellsArr = [cell for cell in self.fp.cells.values()]
-    # Read the positions of the cells stored in the cellsArr (with order)
-    poses = [cell.pose for cell in self.cellsArr]
+    # The cells in fp is stored as dictionary, put them into a cell list to retain orders
+    self.cellsList = [cell for cell in self.fp.cells.values()]
+    # Read the positions of the cells stored in the cellsArr (with order), and save to 2D tensor
+    poses = [cell.pose for cell in self.cellsList]
     self.locs = torch.tensor(poses, dtype=torch.float32)
+
+def generate_adjacency_matrix_FP(self):
+    # Get the number of nodes
+    n = len(self.cellsList)
+
+    # Initialize an empty adjacency matrix
+    adjacency_matrix = np.zeros((n*n, n*n))
+
+    # Iterate over each node
+    for i in range(grid_size):
+        for j in range(grid_size):
+            # Calculate the index of the current node in the flattened grid
+            index = i * grid_size + j
+
+            # Connect the node to its neighbors
+            if i > 0:  # Node above
+                adjacency_matrix[index, index - grid_size] = 1
+            if i < grid_size - 1:  # Node below
+                adjacency_matrix[index, index + grid_size] = 1
+            if j > 0:  # Node to the left
+                adjacency_matrix[index, index - 1] = 1
+            if j < grid_size - 1:  # Node to the right
+                adjacency_matrix[index, index + 1] = 1
+
+    return adjacency_matrix
 
 class FPEnv(RL4COEnvBase):
     """Traveling Salesman Problem (TSP) environment"""

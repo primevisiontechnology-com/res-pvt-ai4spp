@@ -116,28 +116,6 @@ def generate_adjacency_matrix(grid_size):
 
     return adjacency_matrix
 
-def generate_adjacency_matrix_FP(grid_size):
-    # Initialize an empty adjacency matrix
-    adjacency_matrix = np.zeros((grid_size*grid_size, grid_size*grid_size))
-
-    # Iterate over each node
-    for i in range(grid_size):
-        for j in range(grid_size):
-            # Calculate the index of the current node in the flattened grid
-            index = i * grid_size + j
-
-            # Connect the node to its neighbors
-            if i > 0:  # Node above
-                adjacency_matrix[index, index - grid_size] = 1
-            if i < grid_size - 1:  # Node below
-                adjacency_matrix[index, index + grid_size] = 1
-            if j > 0:  # Node to the left
-                adjacency_matrix[index, index - 1] = 1
-            if j < grid_size - 1:  # Node to the right
-                adjacency_matrix[index, index + 1] = 1
-
-    return adjacency_matrix
-
 def compute_manhattan_distance(grid_size, x, y):
     manhattan_matrix = np.zeros((grid_size * grid_size))
     for i in range(grid_size):
