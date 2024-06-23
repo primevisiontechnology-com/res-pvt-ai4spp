@@ -1,5 +1,8 @@
 from typing import Optional
 import torch
+import numpy as np
+from typing import List, Dict
+
 import torch.nn as nn
 
 from tensordict.tensordict import TensorDict
@@ -20,6 +23,8 @@ log = get_pylogger(__name__)
 
 from utils import compute_manhattan_distance, generate_adjacency_matrix
 
+# Import codes to read JSON floorplan
+from Floorplan_Codes.floorplan import Floorplan
 
 def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict:
     """Reset the environment to the initial state"""
@@ -263,27 +268,14 @@ def generate_data(self, batch_size) -> TensorDict:
     adjacency_matrix = adjacency_matrix.unsqueeze(0).repeat(batch_size, 1, 1)
     edges[:] = adjacency_matrix
 
-    obstacle_probability = 0.05
 
-    # import matplotlib.pyplot as plt
-    # plt.imshow(edges[0].float().cpu(), cmap="gray")
-    # plt.colorbar()
-    # plt.title("Adjacency Matrix")
-    # plt.show()
+    # # Define obstacle probability
+    # obstacle_probability = 0.05
 
     # Add obstacles to the adjacency matrix
     obstacle_matrix = torch.rand((batch_size, grid_size * grid_size, grid_size * grid_size)) < obstacle_probability
     edges[obstacle_matrix] = 0  # 0 represents an obstacle
     edges[obstacle_matrix.transpose(1, 2)] = 0
-
-    # import matplotlib.pyplot as plt
-    # plt.imshow(edges[0].float().cpu(), cmap="gray")
-    # plt.colorbar()
-    # plt.title("Adjacency Matrix")
-    # plt.show()
-
-    # print("locs: ", locs.shape)
-    # print("edges: ", edges.shape)
 
     batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
 
@@ -418,8 +410,16 @@ def render(self, td, actions=None, ax=None):
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
 
+def processFP(self, fp_path: str):
+    # Read the floorplan in the floorplan path
+    self.fp = Floorplan(fp_path)
+    # The cells in fp is stored as dictionary, put them into a cell array to retain orders
+    self.cellsArr = [cell for cell in self.fp.cells.values()]
+    # Read the positions of the cells stored in the cellsArr (with order)
+    poses = [cell.pose for cell in self.cellsArr]
+    self.locs = torch.tensor(poses, dtype=torch.float32)
 
-class SPPv2Env(RL4COEnvBase):
+class FPEnv(RL4COEnvBase):
     """Traveling Salesman Problem (TSP) environment"""
 
     name = "tsp"
@@ -430,12 +430,14 @@ class SPPv2Env(RL4COEnvBase):
             min_loc: float = 0,
             max_loc: float = 1,
             td_params: TensorDict = None,
+            fp_path: str = None,
             **kwargs,
     ):
         super().__init__(**kwargs)
         self.num_loc = num_loc
         self.min_loc = min_loc
         self.max_loc = max_loc
+        self.processFP(fp_path)
         self._make_spec(td_params)
 
     _reset = _reset
