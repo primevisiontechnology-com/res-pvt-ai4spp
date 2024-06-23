@@ -265,7 +265,7 @@ def generate_data(self, batch_size) -> TensorDict:
     edges[:] = adjacency_matrix
 
     batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
-    
+
     return TensorDict({"locs": self.locs, "edges": edges}, batch_size=batch_size)
 
 
@@ -417,6 +417,8 @@ def process_fp(self, fp_path: str):
     self.cellsList = list(self.all_cells.values())
     # Read the positions of the cells stored in the cellsArr (with order), and save to 2D tensor
     poses = [cell.pose for cell in self.cellsList]
+    # Only retain x and y coordinates of poses
+    poses = poses[:, 0:2]
     self.locs = torch.tensor(poses, dtype=torch.float32)
 
 
