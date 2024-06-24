@@ -425,15 +425,13 @@ def process_fp(self, fp_path: str):
         x_coords.append(cell.pose[0])
         y_coords.append(cell.pose[1])
 
-    # Convert lists to NumPy arrays
-    x_arr = np.array(x_coords, dtype=np.float64)
-    y_arr = np.array(y_coords, dtype=np.float64)
+    # Convert lists to PyTorch tensors
+    x_tensor = torch.tensor(x_coords, dtype=torch.float32)
+    y_tensor = torch.tensor(y_coords, dtype=torch.float32)
 
-    # Stack x and y arrays together to form a 2D array
-    poses = np.stack((x_arr, y_arr), axis=1)
+    # Stack tensors together to form a 2D tensor
+    self.locs = torch.stack((x_tensor, y_tensor), dim=1)
 
-    # Convert poses to 2D torch tensor
-    self.locs = torch.tensor(poses, dtype=torch.float32)
 
 def generate_adjacency_matrix_fp(self):
     # Initialize an empty adjacency matrix
