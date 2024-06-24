@@ -451,7 +451,7 @@ def generate_adjacency_matrix_fp(self):
     return adjacency_matrix
 
 
-class FPEnv(RL4COEnvBase):
+class FPenv(RL4COEnvBase):
     """Traveling Salesman Problem (TSP) environment"""
 
     name = "tsp"
