@@ -394,8 +394,8 @@ def render(self, td, actions=None, ax=None):
     ax.scatter(x_start, y_start, color="tab:green", s=100, edgecolors="black", zorder=10)
 
     # Setup limits and show
-    ax.set_xlim(-0.05, 1.05)
-    ax.set_ylim(-0.05, 1.05)
+    ax.set_xlim(-10.00, 10.00)
+    ax.set_ylim(-10.00, 10.00)
 
 
 def process_fp(self, fp_path: str):

@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     # gen_pdf(ids, "results/")
 
-    plotter = FloorplanPlotter("../Floorplans/USPS/00xx_Garside/floorplan.json")
+    plotter = FloorplanPlotter("../Floorplans/USPS/0026_Salt_Lake_City/floorplan.json")
     plotter.plot_design()
     if not os.path.exists("results"):
         os.makedirs("results")
