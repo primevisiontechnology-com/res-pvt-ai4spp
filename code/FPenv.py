@@ -419,6 +419,7 @@ def process_fp(self, fp_path: str):
     poses = [cell.pose for cell in self.cellsList]
     # Only retain x and y coordinates of poses
     poses = poses[:, 0:2]
+    # Convert poses to 2D torch tensors
     self.locs = torch.tensor(poses, dtype=torch.float32)
 
 
