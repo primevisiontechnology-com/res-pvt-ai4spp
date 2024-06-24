@@ -415,13 +415,25 @@ def process_fp(self, fp_path: str):
 
     # Put cells (values) in dict into a cell list
     self.cellsList = list(self.all_cells.values())
-    # Read the positions of the cells stored in the cellsArr (with order), and save to 2D tensor
-    poses = [cell.pose for cell in self.cellsList]
-    # Only retain x and y coordinates of poses
-    poses = poses[:, 0:2]
-    # Convert poses to 2D torch tensors
-    self.locs = torch.tensor(poses, dtype=torch.float32)
 
+    # Initialize lists to hold x and y coordinates
+    x_coords = []
+    y_coords = []
+
+    # Extract x and y coordinates separately
+    for cell in self.cellsList:
+        x_coords.append(cell.pose[0])
+        y_coords.append(cell.pose[1])
+
+    # Convert lists to NumPy arrays
+    x_arr = np.array(x_coords, dtype=np.float64)
+    y_arr = np.array(y_coords, dtype=np.float64)
+
+    # Stack x and y arrays together to form a 2D array
+    poses = np.stack((x_arr, y_arr), axis=1)
+
+    # Convert poses to 2D torch tensor
+    self.locs = torch.tensor(poses, dtype=torch.float32)
 
 def generate_adjacency_matrix_fp(self):
     # Initialize an empty adjacency matrix
