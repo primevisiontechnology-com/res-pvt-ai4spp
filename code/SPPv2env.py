@@ -298,12 +298,12 @@ def plot_graph(self, locs, edges, ax=None):
     # Plot the nodes
     ax.scatter(x, y, color="tab:blue")
 
-    # # Plot the edges
-    # x_i, y_i = locs[:, 0], locs[:, 1]
-    # for i in range(edges.shape[0]):
-    #     for j in range(edges.shape[1]):
-    #         if edges[i, j]:
-    #             ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
+    # Plot the edges
+    x_i, y_i = locs[:, 0], locs[:, 1]
+    for i in range(edges.shape[0]):
+        for j in range(edges.shape[1]):
+            if edges[i, j]:
+                ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
 
     # Setup limits and show
     ax.set_xlim(-0.05, 1.05)

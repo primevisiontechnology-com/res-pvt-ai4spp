@@ -269,7 +269,7 @@ def generate_data(self, batch_size) -> TensorDict:
     return TensorDict({"locs": self.locs, "edges": edges}, batch_size=batch_size)
 
 
-def plot_graph(self, locs, edges, ax=None):
+def plot_graph(self, td, ax=None):
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -277,22 +277,27 @@ def plot_graph(self, locs, edges, ax=None):
         # Create a plot of the nodes
         _, ax = plt.subplots()
 
-    locs = locs.detach().cpu()
-    edges = edges.detach().cpu()
+    # if batch_size greater than 0 , we need to select the first batch element
+    if td.batch_size != torch.Size([]):
+        td = td[0]
 
+    locs = td["locs"]
     x, y = locs[:, 0], locs[:, 1]
+    # locs = locs.detach().cpu()
 
     # Plot the nodes
     ax.scatter(x, y, color="tab:blue")
 
-    # Plot the edges
-    x_i, y_i = locs[:, 0], locs[:, 1]
 
+    # Plot the edges
+    edges = td["edges"]
+
+    x_i, y_i = locs[:, 0], locs[:, 1]
     print(f"edges shape: {edges.shape}")  # Debugging: Print the shape of edges
 
     for i in range(edges.shape[0]):
         for j in range(edges.shape[1]):
-            if edges[i, j].item():
+            if edges[i, j]:
                 ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
 
     # Setup limits and show
