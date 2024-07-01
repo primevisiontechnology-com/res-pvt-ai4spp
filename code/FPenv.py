@@ -296,6 +296,9 @@ def plot_graph(self, locs, edges, ax=None):
     ax.set_xlim(-10, 10)
     ax.set_ylim(-10, 10)
 
+    if ax.figure:
+        ax.figure.show()
+
     return ax
 
 
