@@ -287,9 +287,12 @@ def plot_graph(self, locs, edges, ax=None):
 
     # Plot the edges
     x_i, y_i = locs[:, 0], locs[:, 1]
+
+    print(f"edges shape: {edges.shape}")  # Debugging: Print the shape of edges
+
     for i in range(edges.shape[0]):
         for j in range(edges.shape[1]):
-            if edges[i, j]:
+            if edges[i, j].item():
                 ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
 
     # Setup limits and show
@@ -498,3 +501,4 @@ class FPEnv(RL4COEnvBase):
     render = render
     process_fp = process_fp
     generate_adjacency_matrix_fp = generate_adjacency_matrix_fp
+    plot_graph = plot_graph
