@@ -293,8 +293,8 @@ def plot_graph(self, locs, edges, ax=None):
                 ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
 
     # Setup limits and show
-    ax.set_xlim(-0.05, 1.05)
-    ax.set_ylim(-0.05, 1.05)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(-10, 10)
 
     return ax
 
@@ -314,7 +314,7 @@ def generate_data_slow(self, batch_size) -> TensorDict:
             locs[(i, j)] = (x, y)
     locs = torch.tensor(list(locs.values()), dtype=torch.float32)
     locs = locs.unsqueeze(0).expand(batch_size + [-1, -1])
-    # Generate a random adjaceny matrix for the edges
+    # Generate a random adjacent matrix for the edges
     edges = torch.zeros((*batch_size, num_loc, num_loc), dtype=torch.bool)
     for i in range(edges.shape[0]):
         matrix = generate_adjacency_matrix(grid_size)
@@ -457,6 +457,11 @@ def generate_adjacency_matrix_fp(self):
 
             # Mark the corresponding position in the adjacency_matrix as 1
             adjacency_matrix[i, neighbor_index] = 1
+
+    print("Row Length: " + str(len(adjacency_matrix)))
+    print("Column Length: " + str(len(adjacency_matrix[0])))
+    for row in adjacency_matrix:
+        print(row)
 
     return adjacency_matrix
 
