@@ -16,7 +16,7 @@ class Floorplan:
         self.cells = {}
         self.directions = {}
         self.parse_zones_nodes(data_path)
-        # self.parse_directions()
+        #self.parse_directions()
 
     def parse_zones_nodes(self, data_path: str):
         with open(data_path, "r") as json_file:
@@ -29,19 +29,27 @@ class Floorplan:
             zone_obj = Zone(zone["id"], zone["type"], zone["pose"])
             self.zones[zone_obj.getId()] = zone_obj
             for cell in zone["nodes"]:
-                absolute_id = f'/{zone["id"]}/{cell["id"]}'
+                # Get the real cell id to avoid duplicates - Yifei
+                if '/' in cell["id"]:
+                    parts = cell["id"].split('/')
+                    cell_id = parts[-1]
+                else:
+                    cell_id = cell["id"]
+
                 absolute_pose = [
                     cell["pose"][i] + zone_pose
                     for i, zone_pose in enumerate(zone["pose"])
                 ]
                 cell_obj = Cell(
                     zone_obj,
-                    absolute_id,
+                    cell_id,
                     cell["type"],
                     absolute_pose,
                     cell["connections"],
                 )
-                self.cells[cell_obj.getId()] = cell_obj
+
+                if cell_id not in self.cells.keys():
+                    self.cells[cell_id] = cell_obj
 
     def parse_directions(self):
         if "directions" not in self.data:
