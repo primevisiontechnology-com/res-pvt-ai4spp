@@ -29,7 +29,14 @@ class Floorplan:
             zone_obj = Zone(zone["id"], zone["type"], zone["pose"])
             self.zones[zone_obj.getId()] = zone_obj
             for cell in zone["nodes"]:
-                absolute_id = f'/{zone["id"]}/{cell["id"]}'
+                # Get the real cell id to avoid duplicates - Yifei
+                if '/' in cell["id"]:
+                    parts = cell["id"].split('/')
+                    cell_id = parts[-1]
+                else:
+                    cell_id = cell["id"]
+
+                absolute_id = f'/{zone["id"]}/{cell_id}'
                 absolute_pose = [
                     cell["pose"][i] + zone_pose
                     for i, zone_pose in enumerate(zone["pose"])
