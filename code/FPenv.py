@@ -300,9 +300,11 @@ def plot_graph(self, td, ax=None):
             if edges[i, j]:
                 ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
 
-    # Setup limits and show
-    ax.set_xlim(-10, 10)
-    ax.set_ylim(-10, 10)
+    # # Setup limits and show
+    # ax.set_xlim(-10, 10)
+    # ax.set_ylim(-10, 10)
+
+    ax.autoscale()
 
     if ax.figure:
         ax.figure.show()
@@ -404,10 +406,11 @@ def render(self, td, actions=None, ax=None):
     # Highlight the first action
     ax.scatter(x_start, y_start, color="tab:green", s=100, edgecolors="black", zorder=10)
 
-    # Setup limits and show
-    ax.set_xlim(-10.00, 10.00)
-    ax.set_ylim(-10.00, 10.00)
+    # # Setup limits and show
+    # ax.set_xlim(-10.00, 10.00)
+    # ax.set_ylim(-10.00, 10.00)
 
+    ax.autoscale()
 
 def process_fp(self, fp_path: str):
     # Read the floorplan in the floorplan path
