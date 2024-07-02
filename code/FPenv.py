@@ -416,6 +416,7 @@ def process_fp(self, fp_path: str):
     self.all_cells = self.fp.getCells()
     # Get the number of cells
     self.num_loc = len(self.all_cells)
+    print("num_loc: " + str(self.num_loc))
 
     # Put cell ids (keys) in dict into a cell list
     idList = list(self.all_cells.keys())
