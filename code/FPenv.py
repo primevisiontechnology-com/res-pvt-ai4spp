@@ -458,12 +458,10 @@ def generate_adjacency_matrix_fp(self):
             # Get the real connected neighbor id to ensure neighbor_id in consistent format - Yifei
             if '/' in connection["connects_to"]:
                 parts = connection["connects_to"].split('/')
-                connect_id = parts[-1]
+                neighbor_id = parts[-1]
             else:
-                connect_id = connection["connects_to"]
+                neighbor_id = connection["connects_to"]
 
-            # Get neighbor's id
-            neighbor_id = f'/{cell.getZoneId()}/{connect_id}'
             # If neighbor does not exist, continue
             if neighbor_id not in self.all_cells:
                 continue
