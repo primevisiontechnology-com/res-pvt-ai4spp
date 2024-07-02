@@ -477,8 +477,6 @@ def generate_adjacency_matrix_fp(self):
 
     print("Row Length: " + str(len(adjacency_matrix)))
     print("Column Length: " + str(len(adjacency_matrix[0])))
-    for row in adjacency_matrix:
-        print(row)
 
     return adjacency_matrix
 
