@@ -1,0 +1,2654 @@
+{
+  "/output_gate_1/4qyecy": {
+    "type": "output",
+    "sub_directions": {
+      "001": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/f8rftc": {
+    "type": "output",
+    "sub_directions": {
+      "002": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/radoum": {
+    "type": "output",
+    "sub_directions": {
+      "003": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/r2u9i3": {
+    "type": "output",
+    "sub_directions": {
+      "004": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/lnmcy3": {
+    "type": "output",
+    "sub_directions": {
+      "005": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/zeir3s": {
+    "type": "output",
+    "sub_directions": {
+      "006": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/4jqz8p": {
+    "type": "output",
+    "sub_directions": {
+      "007": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/uwerfu": {
+    "type": "output",
+    "sub_directions": {
+      "008": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/p1mb1c": {
+    "type": "output",
+    "sub_directions": {
+      "009": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/3gqe3z": {
+    "type": "output",
+    "sub_directions": {
+      "010": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/9834ci": {
+    "type": "output",
+    "sub_directions": {
+      "011": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/lyrymo": {
+    "type": "output",
+    "sub_directions": {
+      "012": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/eprqsj": {
+    "type": "output",
+    "sub_directions": {
+      "013": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/s9vep4": {
+    "type": "output",
+    "sub_directions": {
+      "014": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/k2magl": {
+    "type": "output",
+    "sub_directions": {
+      "015": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/mw18cz": {
+    "type": "output",
+    "sub_directions": {
+      "016": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/5v0c1z": {
+    "type": "output",
+    "sub_directions": {
+      "017": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/w24po4": {
+    "type": "output",
+    "sub_directions": {
+      "018": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/w8red2": {
+    "type": "output",
+    "sub_directions": {
+      "019": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/7oov03": {
+    "type": "output",
+    "sub_directions": {
+      "020": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/zr4dn5": {
+    "type": "output",
+    "sub_directions": {
+      "021": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/5oyggw": {
+    "type": "output",
+    "sub_directions": {
+      "022": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/63zmx3": {
+    "type": "output",
+    "sub_directions": {
+      "023": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/eqkb5y": {
+    "type": "output",
+    "sub_directions": {
+      "024": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/l5ob8r": {
+    "type": "output",
+    "sub_directions": {
+      "025": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/qm6bs8": {
+    "type": "output",
+    "sub_directions": {
+      "026": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/bhr93m": {
+    "type": "output",
+    "sub_directions": {
+      "027": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/qimtqe": {
+    "type": "output",
+    "sub_directions": {
+      "028": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/914dut": {
+    "type": "output",
+    "sub_directions": {
+      "029": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/ed06je": {
+    "type": "output",
+    "sub_directions": {
+      "030": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/x6f1cq": {
+    "type": "output",
+    "sub_directions": {
+      "031": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/a54gkm": {
+    "type": "output",
+    "sub_directions": {
+      "032": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/9ilde9": {
+    "type": "output",
+    "sub_directions": {
+      "033": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/0u742p": {
+    "type": "output",
+    "sub_directions": {
+      "034": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/x92vgn": {
+    "type": "output",
+    "sub_directions": {
+      "035": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/mjlr4e": {
+    "type": "output",
+    "sub_directions": {
+      "036": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/44zzzw": {
+    "type": "output",
+    "sub_directions": {
+      "037": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/uber1p": {
+    "type": "output",
+    "sub_directions": {
+      "038": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/bdb2o1": {
+    "type": "output",
+    "sub_directions": {
+      "039": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/hq54yv": {
+    "type": "output",
+    "sub_directions": {
+      "040": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/2gjvaj": {
+    "type": "output",
+    "sub_directions": {
+      "041": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/teqzvb": {
+    "type": "output",
+    "sub_directions": {
+      "042": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/iknup9": {
+    "type": "output",
+    "sub_directions": {
+      "043": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/nkcbbu": {
+    "type": "output",
+    "sub_directions": {
+      "044": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/input_gate_1/node_0": {
+    "type": "input"
+  },
+  "/input_gate_1/node_1": {
+    "type": "input"
+  },
+  "/output_gate_2/sc3h6r": {
+    "type": "output",
+    "sub_directions": {
+      "045": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/k2wtyw": {
+    "type": "output",
+    "sub_directions": {
+      "046": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/qgalc9": {
+    "type": "output",
+    "sub_directions": {
+      "047": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/bcxwui": {
+    "type": "output",
+    "sub_directions": {
+      "048": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/abau0l": {
+    "type": "output",
+    "sub_directions": {
+      "049": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/02n7nm": {
+    "type": "output",
+    "sub_directions": {
+      "050": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/mu5oak": {
+    "type": "output",
+    "sub_directions": {
+      "051": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/yt94y7": {
+    "type": "output",
+    "sub_directions": {
+      "052": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/yvogvv": {
+    "type": "output",
+    "sub_directions": {
+      "053": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/u47ea8": {
+    "type": "output",
+    "sub_directions": {
+      "054": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/1m0u4z": {
+    "type": "output",
+    "sub_directions": {
+      "055": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/v5v42x": {
+    "type": "output",
+    "sub_directions": {
+      "056": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/rv3dne": {
+    "type": "output",
+    "sub_directions": {
+      "057": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/s12qtc": {
+    "type": "output",
+    "sub_directions": {
+      "058": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/to9on6": {
+    "type": "output",
+    "sub_directions": {
+      "059": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/nqkcl7": {
+    "type": "output",
+    "sub_directions": {
+      "060": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/pq9vu0": {
+    "type": "output",
+    "sub_directions": {
+      "061": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/xun5mj": {
+    "type": "output",
+    "sub_directions": {
+      "062": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/tagw7p": {
+    "type": "output",
+    "sub_directions": {
+      "063": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/rbfi0w": {
+    "type": "output",
+    "sub_directions": {
+      "064": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/4tgski": {
+    "type": "output",
+    "sub_directions": {
+      "065": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/duzcly": {
+    "type": "output",
+    "sub_directions": {
+      "066": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/atc3rk": {
+    "type": "output",
+    "sub_directions": {
+      "067": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/oe7hfh": {
+    "type": "output",
+    "sub_directions": {
+      "068": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/p563vl": {
+    "type": "output",
+    "sub_directions": {
+      "069": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/goikbb": {
+    "type": "output",
+    "sub_directions": {
+      "070": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/b9qjlc": {
+    "type": "output",
+    "sub_directions": {
+      "071": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/nqw64g": {
+    "type": "output",
+    "sub_directions": {
+      "072": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/xf1aqj": {
+    "type": "output",
+    "sub_directions": {
+      "073": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/ntihdj": {
+    "type": "output",
+    "sub_directions": {
+      "074": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/icfb5u": {
+    "type": "output",
+    "sub_directions": {
+      "075": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/hqpolx": {
+    "type": "output",
+    "sub_directions": {
+      "076": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/38v9rj": {
+    "type": "output",
+    "sub_directions": {
+      "077": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/3sjsp9": {
+    "type": "output",
+    "sub_directions": {
+      "078": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/uzxbal": {
+    "type": "output",
+    "sub_directions": {
+      "079": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/oroptn": {
+    "type": "output",
+    "sub_directions": {
+      "080": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/i4absv": {
+    "type": "output",
+    "sub_directions": {
+      "081": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/36nlwz": {
+    "type": "output",
+    "sub_directions": {
+      "082": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/he63fr": {
+    "type": "output",
+    "sub_directions": {
+      "083": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/qq7jso": {
+    "type": "output",
+    "sub_directions": {
+      "084": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/p2gqbv": {
+    "type": "output",
+    "sub_directions": {
+      "085": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/thmu7y": {
+    "type": "output",
+    "sub_directions": {
+      "086": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/5egtfq": {
+    "type": "output",
+    "sub_directions": {
+      "087": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_2/v5queu": {
+    "type": "output",
+    "sub_directions": {
+      "088": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/v36h9k": {
+    "type": "output",
+    "sub_directions": {
+      "089": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/eodfdg": {
+    "type": "output",
+    "sub_directions": {
+      "090": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/alm95d": {
+    "type": "output",
+    "sub_directions": {
+      "091": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/fiozsy": {
+    "type": "output",
+    "sub_directions": {
+      "092": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/dd4904": {
+    "type": "output",
+    "sub_directions": {
+      "093": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/u3tmgn": {
+    "type": "output",
+    "sub_directions": {
+      "094": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/wssbs5": {
+    "type": "output",
+    "sub_directions": {
+      "095": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/tpc7vt": {
+    "type": "output",
+    "sub_directions": {
+      "096": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/q0sdh1": {
+    "type": "output",
+    "sub_directions": {
+      "097": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/ndvcdj": {
+    "type": "output",
+    "sub_directions": {
+      "098": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/dgtdt8": {
+    "type": "output",
+    "sub_directions": {
+      "099": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/eb9r0c": {
+    "type": "output",
+    "sub_directions": {
+      "100": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/s61b8u": {
+    "type": "output",
+    "sub_directions": {
+      "101": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/bef6wf": {
+    "type": "output",
+    "sub_directions": {
+      "102": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/nlcaqr": {
+    "type": "output",
+    "sub_directions": {
+      "103": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/qb4618": {
+    "type": "output",
+    "sub_directions": {
+      "104": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/wh4tjb": {
+    "type": "output",
+    "sub_directions": {
+      "105": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/ppjg3g": {
+    "type": "output",
+    "sub_directions": {
+      "106": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/ilsqld": {
+    "type": "output",
+    "sub_directions": {
+      "107": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/30nxbh": {
+    "type": "output",
+    "sub_directions": {
+      "108": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/6l4dzi": {
+    "type": "output",
+    "sub_directions": {
+      "109": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_6/rwblcs": {
+    "type": "output",
+    "sub_directions": {
+      "110": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/m2i9o5": {
+    "type": "output",
+    "sub_directions": {
+      "111": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/7dss4w": {
+    "type": "output",
+    "sub_directions": {
+      "112": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/dwzapz": {
+    "type": "output",
+    "sub_directions": {
+      "113": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/xoctru": {
+    "type": "output",
+    "sub_directions": {
+      "114": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/1wglhb": {
+    "type": "output",
+    "sub_directions": {
+      "115": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/nsc7xg": {
+    "type": "output",
+    "sub_directions": {
+      "116": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/f41s51": {
+    "type": "output",
+    "sub_directions": {
+      "117": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/v4upml": {
+    "type": "output",
+    "sub_directions": {
+      "118": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/yscc6h": {
+    "type": "output",
+    "sub_directions": {
+      "119": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/d6lssg": {
+    "type": "output",
+    "sub_directions": {
+      "120": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/278gbf": {
+    "type": "output",
+    "sub_directions": {
+      "121": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/ma93ta": {
+    "type": "output",
+    "sub_directions": {
+      "122": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/lmoe6s": {
+    "type": "output",
+    "sub_directions": {
+      "123": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/t7es6n": {
+    "type": "output",
+    "sub_directions": {
+      "124": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/iyzcbg": {
+    "type": "output",
+    "sub_directions": {
+      "125": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/zy6ihd": {
+    "type": "output",
+    "sub_directions": {
+      "126": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/o0viua": {
+    "type": "output",
+    "sub_directions": {
+      "127": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/vyqxmy": {
+    "type": "output",
+    "sub_directions": {
+      "128": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/twghhd": {
+    "type": "output",
+    "sub_directions": {
+      "129": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/1vvfmy": {
+    "type": "output",
+    "sub_directions": {
+      "130": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/rm0caz": {
+    "type": "output",
+    "sub_directions": {
+      "131": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/dpav79": {
+    "type": "output",
+    "sub_directions": {
+      "132": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/d21lli": {
+    "type": "output",
+    "sub_directions": {
+      "133": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/2u575j": {
+    "type": "output",
+    "sub_directions": {
+      "134": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/u3cme5": {
+    "type": "output",
+    "sub_directions": {
+      "135": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/e0id1c": {
+    "type": "output",
+    "sub_directions": {
+      "136": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/cuaqp9": {
+    "type": "output",
+    "sub_directions": {
+      "137": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/2pchj7": {
+    "type": "output",
+    "sub_directions": {
+      "138": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/zvnnlo": {
+    "type": "output",
+    "sub_directions": {
+      "139": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/gtklg8": {
+    "type": "output",
+    "sub_directions": {
+      "140": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/1e679p": {
+    "type": "output",
+    "sub_directions": {
+      "141": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/vqz431": {
+    "type": "output",
+    "sub_directions": {
+      "142": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/0nb7x4": {
+    "type": "output",
+    "sub_directions": {
+      "143": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/8pvvoa": {
+    "type": "output",
+    "sub_directions": {
+      "144": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/9b5osn": {
+    "type": "output",
+    "sub_directions": {
+      "145": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/joyv6y": {
+    "type": "output",
+    "sub_directions": {
+      "146": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/0dfcc1": {
+    "type": "output",
+    "sub_directions": {
+      "147": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/pbk8pp": {
+    "type": "output",
+    "sub_directions": {
+      "148": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/xzlwv2": {
+    "type": "output",
+    "sub_directions": {
+      "149": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/2pdzy7": {
+    "type": "output",
+    "sub_directions": {
+      "150": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/3c8xdp": {
+    "type": "output",
+    "sub_directions": {
+      "reject": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/ylvx5t": {
+    "type": "output",
+    "sub_directions": {
+      "152": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/q79t9d": {
+    "type": "output",
+    "sub_directions": {
+      "153": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_3/vq182z": {
+    "type": "output",
+    "sub_directions": {
+      "154": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/0eyai1": {
+    "type": "output",
+    "sub_directions": {
+      "155": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ip711k": {
+    "type": "output",
+    "sub_directions": {
+      "156": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/kkc5wp": {
+    "type": "output",
+    "sub_directions": {
+      "157": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ht61kl": {
+    "type": "output",
+    "sub_directions": {
+      "158": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/3za65n": {
+    "type": "output",
+    "sub_directions": {
+      "159": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/f06tun": {
+    "type": "output",
+    "sub_directions": {
+      "160": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/n26meo": {
+    "type": "output",
+    "sub_directions": {
+      "161": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/vvejmp": {
+    "type": "output",
+    "sub_directions": {
+      "162": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/lqcokq": {
+    "type": "output",
+    "sub_directions": {
+      "163": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/1twtqu": {
+    "type": "output",
+    "sub_directions": {
+      "164": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/xjv0nu": {
+    "type": "output",
+    "sub_directions": {
+      "165": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/xvbt6u": {
+    "type": "output",
+    "sub_directions": {
+      "166": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/uo696l": {
+    "type": "output",
+    "sub_directions": {
+      "167": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/lbiem2": {
+    "type": "output",
+    "sub_directions": {
+      "168": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ox1dvk": {
+    "type": "output",
+    "sub_directions": {
+      "169": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/bqvbs9": {
+    "type": "output",
+    "sub_directions": {
+      "170": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/hsm0kd": {
+    "type": "output",
+    "sub_directions": {
+      "171": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/i92jmr": {
+    "type": "output",
+    "sub_directions": {
+      "172": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/asmipg": {
+    "type": "output",
+    "sub_directions": {
+      "173": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/srz2zd": {
+    "type": "output",
+    "sub_directions": {
+      "174": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/669a2n": {
+    "type": "output",
+    "sub_directions": {
+      "175": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/iudsqo": {
+    "type": "output",
+    "sub_directions": {
+      "176": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/3f418k": {
+    "type": "output",
+    "sub_directions": {
+      "177": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/13shd0": {
+    "type": "output",
+    "sub_directions": {
+      "178": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/qh0q9y": {
+    "type": "output",
+    "sub_directions": {
+      "179": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ypoyuz": {
+    "type": "output",
+    "sub_directions": {
+      "180": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/t2fqw3": {
+    "type": "output",
+    "sub_directions": {
+      "181": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/qik59n": {
+    "type": "output",
+    "sub_directions": {
+      "182": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/xvrhdi": {
+    "type": "output",
+    "sub_directions": {
+      "183": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/u1jmve": {
+    "type": "output",
+    "sub_directions": {
+      "184": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ypxrwi": {
+    "type": "output",
+    "sub_directions": {
+      "185": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ox0kb4": {
+    "type": "output",
+    "sub_directions": {
+      "186": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/yk6o0j": {
+    "type": "output",
+    "sub_directions": {
+      "187": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/zg7e96": {
+    "type": "output",
+    "sub_directions": {
+      "188": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/tiv0ne": {
+    "type": "output",
+    "sub_directions": {
+      "189": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/fe7z2h": {
+    "type": "output",
+    "sub_directions": {
+      "190": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ll0tv5": {
+    "type": "output",
+    "sub_directions": {
+      "191": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ot2sug": {
+    "type": "output",
+    "sub_directions": {
+      "192": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/zxpd1s": {
+    "type": "output",
+    "sub_directions": {
+      "193": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/z8opn2": {
+    "type": "output",
+    "sub_directions": {
+      "194": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/7kolet": {
+    "type": "output",
+    "sub_directions": {
+      "195": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/uhuufy": {
+    "type": "output",
+    "sub_directions": {
+      "196": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/u2h2i8": {
+    "type": "output",
+    "sub_directions": {
+      "197": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_4/ciq2u6": {
+    "type": "output",
+    "sub_directions": {
+      "198": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/q1jaxl": {
+    "type": "output",
+    "sub_directions": {
+      "199": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/sk2z09": {
+    "type": "output",
+    "sub_directions": {
+      "200": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/ryg6hr": {
+    "type": "output",
+    "sub_directions": {
+      "201": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/n9l0jm": {
+    "type": "output",
+    "sub_directions": {
+      "202": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/t1idku": {
+    "type": "output",
+    "sub_directions": {
+      "203": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/kvd6am": {
+    "type": "output",
+    "sub_directions": {
+      "204": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/kza1u0": {
+    "type": "output",
+    "sub_directions": {
+      "205": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/akq0qe": {
+    "type": "output",
+    "sub_directions": {
+      "206": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/j112o2": {
+    "type": "output",
+    "sub_directions": {
+      "207": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/aenupo": {
+    "type": "output",
+    "sub_directions": {
+      "208": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/d6px8h": {
+    "type": "output",
+    "sub_directions": {
+      "209": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/1rn7o1": {
+    "type": "output",
+    "sub_directions": {
+      "210": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/ggkj08": {
+    "type": "output",
+    "sub_directions": {
+      "211": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/84qys3": {
+    "type": "output",
+    "sub_directions": {
+      "212": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/ptd1c2": {
+    "type": "output",
+    "sub_directions": {
+      "213": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/34c9cs": {
+    "type": "output",
+    "sub_directions": {
+      "214": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/pkjor1": {
+    "type": "output",
+    "sub_directions": {
+      "215": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/nxxlb2": {
+    "type": "output",
+    "sub_directions": {
+      "216": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/yal11j": {
+    "type": "output",
+    "sub_directions": {
+      "217": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/v6kj77": {
+    "type": "output",
+    "sub_directions": {
+      "218": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/a1ttyl": {
+    "type": "output",
+    "sub_directions": {
+      "219": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_5/els74m": {
+    "type": "output",
+    "sub_directions": {
+      "220": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/input_gate_2/node_2": {
+    "type": "input"
+  },
+  "/input_gate_2/node_3": {
+    "type": "input"
+  }
+}

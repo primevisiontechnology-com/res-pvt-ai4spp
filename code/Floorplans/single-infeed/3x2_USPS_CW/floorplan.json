@@ -1,0 +1,382 @@
+{
+  "zones": [
+    {
+      "id": "output_gate_1",
+      "constraints": {
+        "max_velocity": 0.8,
+        "max_lateral_acceleration": 0.4,
+        "max_corner_size": 1,
+        "max_longitudinal_acceleration": 0.8,
+        "max_longitudinal_deceleration": 0.6
+      },
+      "pose": [
+        0,
+        0,
+        0
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "node_reject",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            -2,
+            0,
+            -1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1001",
+              "reachable_from": [
+                "node_008"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_101",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            -0.65,
+            3.44,
+            -3.14
+          ],
+          "connections": [
+            {
+              "connects_to": "node_102",
+              "reachable_from": [
+                "node_103"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_102",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -2,
+            3.44,
+            -2.35
+          ],
+          "connections": [
+            {
+              "connects_to": "node_007",
+              "reachable_from": [
+                "node_101"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_004",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            0.7,
+            0,
+            1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_005",
+              "reachable_from": [
+                "/input_gate_1/node_43"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_005",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            0.7,
+            1.22,
+            1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_006",
+              "reachable_from": [
+                "node_004"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_006",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            0.7,
+            2.44,
+            1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_103",
+              "reachable_from": [
+                "node_005"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_103",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            0.7,
+            3.44,
+            2.35
+          ],
+          "connections": [
+            {
+              "connects_to": "node_101",
+              "reachable_from": [
+                "node_006"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_007",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            -2,
+            2.44,
+            -1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_008",
+              "reachable_from": [
+                "node_102"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_008",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            -2,
+            1.22,
+            -1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "node_reject",
+              "reachable_from": [
+                "node_007"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_1001",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -2,
+            -1,
+            -1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "/input_gate_1/node_105",
+              "reachable_from": [
+                "node_reject"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "/input_gate_1/node_43",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            0.7,
+            -1,
+            1.57
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/input_gate_1/node_104"
+              ],
+              "connects_to": "node_004",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "input_gate_1",
+      "constraints": {
+        "max_velocity": 0.8,
+        "max_lateral_acceleration": 0.4,
+        "max_corner_size": 1,
+        "max_longitudinal_acceleration": 0.8,
+        "max_longitudinal_deceleration": 0.6
+      },
+      "pose": [
+        0,
+        0,
+        0
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "/output_gate_1/node_1001",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -2,
+            -1,
+            -1.57
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/output_gate_1/node_reject"
+              ],
+              "connects_to": "node_105",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "node_43",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            0.7,
+            -1,
+            1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "/output_gate_1/node_004",
+              "reachable_from": [
+                "node_104"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_104",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            0.7,
+            -2,
+            0.79
+          ],
+          "connections": [
+            {
+              "connects_to": "node_43",
+              "reachable_from": [
+                "node_1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_105",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -2,
+            -2,
+            -0.79
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1",
+              "reachable_from": [
+                "/output_gate_1/node_1001"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_1",
+          "type": "target",
+          "clear_distance": 0.2,
+          "pose": [
+            -0.65,
+            -2,
+            0
+          ],
+          "connections": [
+            {
+              "connects_to": "node_104",
+              "reachable_from": [
+                "node_105"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ],
+          "terminal": true
+        }
+      ]
+    }
+  ],
+  "info": {
+    "version": "0.0.1",
+    "changelog": "",
+    "design_tool_version": "v1.2.1"
+  }
+}

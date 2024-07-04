@@ -1,0 +1,101 @@
+simulation_directions_to_number: false
+simulation_direction_range: [1, 22]
+
+# TCP Connection parameters
+tcp_ip: 127.0.0.2
+tcp_port: 9001
+
+# TCP connection type
+tjess_connection_mode: "client"
+
+print_raw_tcp_message: true
+
+# Scan flow settings
+strict_scan_flow: true
+
+# TCP Client parameters
+max_heartbeat_timeout: 20
+confirm_heartbeat_frequency: 2.0
+
+# system accept/reject codes
+confirm_system_acceptance: true
+system_accepted_codes:
+  - 00801
+  - 00802
+
+# Customized cell map settings
+cell_map:
+  NA: /input_gate_1/node_1
+
+peers:
+  - id: qb_api
+    ip: 0.0.0.0
+    port: 6011
+    partition: pv
+    scope: PARTITION
+  - id: qb
+    ip: 0.0.0.0
+    port: 6017
+    partition: pv
+    scope: PARTITION
+  - id: qb_storage
+    ip: 0.0.0.0
+    port: 6015
+    partition: pv
+    scope: PARTITION
+  - id: 0000
+    ip: 0.0.0.0
+    port: 3010
+  - id: 0001
+    ip: 0.0.0.0
+    port: 3020
+  - id: 0002
+    ip: 0.0.0.0
+    port: 3030
+  - id: 0003
+    ip: 0.0.0.0
+    port: 3040
+  - id: 0004
+    ip: 0.0.0.0
+    port: 3050
+  - id: 0005
+    ip: 0.0.0.0
+    port: 3060
+  - id: 0006
+    ip: 0.0.0.0
+    port: 3070
+  - id: 0007
+    ip: 0.0.0.0
+    port: 3080
+  - id: 0008
+    ip: 0.0.0.0
+    port: 3090
+  - id: 0009
+    ip: 0.0.0.0
+    port: 3100
+  - id: 0010
+    ip: 0.0.0.0
+    port: 3110
+
+navigation:
+  - id: input_gate_1
+    ip: 0.0.0.0
+    port: 4020
+  - id: output_gate_1
+    ip: 0.0.0.0
+    port: 4030
+  - id: output_gate_2
+    ip: 0.0.0.0
+    port: 4040
+  - id: output_gate_3
+    ip: 0.0.0.0
+    port: 4060
+  - id: cross_gate
+    ip: 0.0.0.0
+    port: 4050
+  - id: output_gate_4
+    ip: 0.0.0.0
+    port: 4070
+  - id: output_gate_5
+    ip: 0.0.0.0
+    port: 4080

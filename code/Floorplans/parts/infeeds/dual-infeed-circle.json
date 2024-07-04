@@ -1,0 +1,1861 @@
+{
+  "zones": [
+    {
+      "id": "output_gate_1",
+      "constraints": {
+        "max_velocity": 0.8,
+        "max_lateral_acceleration": 0.6,
+        "max_corner_size": 1,
+        "max_longitudinal_acceleration": 0.8,
+        "max_longitudinal_deceleration": 0.6
+      },
+      "pose": [
+        0,
+        0,
+        0
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "node_1586",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2467285517247126,
+            9.898970059292155,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "nje5kf",
+              "reachable_from": [
+                "wlhnth"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "r7ap9d",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.830601794287798,
+            -10.353890296253685,
+            2.352388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "zaiyqv",
+              "reachable_from": [
+                "i2o777"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "lesu4r",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -2.248599919506442,
+            12.248969314181958,
+            -0.7807963267899998
+          ],
+          "connections": [
+            {
+              "connects_to": "wlhnth",
+              "reachable_from": [
+                "ku28nx",
+                "2p7oig"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "3t5o2w",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -2.231558527791964,
+            -9.151023900559219,
+            -2.35079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "51vt79",
+              "reachable_from": [
+                "l2ladf",
+                "7izsb2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            },
+            {
+              "connects_to": "9lqb0z",
+              "reachable_from": [
+                "l2ladf",
+                "7izsb2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "9lqb0z",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -2.230602935733208,
+            -10.351023520077415,
+            -2.35079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "gzfgpp",
+              "reachable_from": [
+                "3t5o2w"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "zaiyqv",
+          "type": "init",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.831557386346555,
+            -9.153890676735486,
+            1.57
+          ],
+          "connections": [
+            {
+              "connects_to": "z2a0ae",
+              "reachable_from": [
+                "r7ap9d"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "q1zelu",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -4.848599095129202,
+            12.24689886472132,
+            0.7823889803895873
+          ],
+          "connections": [
+            {
+              "connects_to": "2p7oig",
+              "reachable_from": [
+                "ppsjeh"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ku28nx",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -2.249555511565198,
+            13.448968933700156,
+            -0.7807963267899998
+          ],
+          "connections": [
+            {
+              "connects_to": "lesu4r",
+              "reachable_from": [
+                "c5t8sb",
+                "zjjuh0"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "qznr46",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.8495543701197885,
+            13.446102157523887,
+            0.7823889803895873
+          ],
+          "connections": [
+            {
+              "connects_to": "my50if",
+              "reachable_from": [
+                "ndc588"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "i8dzp1",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -4.831557703414723,
+            -9.153094350019856,
+            2.352388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "uzxfro",
+              "reachable_from": [
+                "51vt79"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "gzfgpp",
+          "type": "init",
+          "clear_distance": 0.1,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -3.430602555251405,
+            -10.351979112136172,
+            -3.1407963267900003
+          ],
+          "connections": [
+            {
+              "connects_to": "i2o777",
+              "reachable_from": [
+                "9lqb0z"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "wlhnth",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.247644327447687,
+            11.04896969466376,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1586",
+              "reachable_from": [
+                "lesu4r"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "c5t8sb",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -3.4495551310833954,
+            13.4480133416414,
+            -0.7807963267900005
+          ],
+          "connections": [
+            {
+              "connects_to": "ku28nx",
+              "reachable_from": [
+                "my50if",
+                "vnh0i4"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ndc588",
+          "type": "init",
+          "clear_distance": 0.1,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.848598778061033,
+            12.24610253800569,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "qznr46",
+              "reachable_from": [
+                "y1uv2m"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_idws2",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838173021329117,
+            -4.8438945783797935,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "/input_gate_1/asdss5",
+              "reachable_from": [
+                "0w8j2y"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "r3csff",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.834989871559088,
+            -4.84309571658367,
+            1.569203673210002
+          ],
+          "connections": [
+            {
+              "connects_to": "/input_gate_1/ouxxzu",
+              "reachable_from": [
+                "b12mcp"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "gqwfm3",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2438617755484453,
+            6.298971200737564,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "fdfcfn",
+              "reachable_from": [
+                "mjmby2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "fdfcfn",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2385814332716856,
+            5.098975025134595,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "e5ydgi",
+              "reachable_from": [
+                "gqwfm3"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "e5ydgi",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2385973594919855,
+            3.898974631970193,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "qo4ll3",
+              "reachable_from": [
+                "fdfcfn"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "qo4ll3",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.23862124897687,
+            2.698974232464429,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "n3yi18",
+              "reachable_from": [
+                "e5ydgi"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "n3yi18",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2386371751971703,
+            1.4989738393000263,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "y3cc38",
+              "reachable_from": [
+                "qo4ll3"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "y3cc38",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2386610646820535,
+            0.2989734397942611,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "mi4vu0",
+              "reachable_from": [
+                "n3yi18"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "mi4vu0",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2381282231959103,
+            -0.9010265163716171,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "ltoqy7",
+              "reachable_from": [
+                "y3cc38"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ltoqy7",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.238700880387239,
+            -2.1010273528759065,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1584",
+              "reachable_from": [
+                "mi4vu0"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "a2xgzk",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2386053205945213,
+            -4.5010280377429135,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "6jmqy8",
+              "reachable_from": [
+                "node_1584"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_1584",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2386053209033863,
+            -3.3010276572612356,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "a2xgzk",
+              "reachable_from": [
+                "ltoqy7"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "7izsb2",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2366543198838427,
+            -7.9510275779939645,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "3t5o2w",
+              "reachable_from": [
+                "hbcl5e"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "uzxfro",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.823404804332908,
+            -7.9530874771645275,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "c6x8a9",
+              "reachable_from": [
+                "i8dzp1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "z2a0ae",
+          "type": "init",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.836652036993401,
+            -7.9538943532612665,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "tbncqi",
+              "reachable_from": [
+                "zaiyqv"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "2p7oig",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -3.6485994756110056,
+            12.247854456780077,
+            -0.0007963267899993017
+          ],
+          "connections": [
+            {
+              "connects_to": "lesu4r",
+              "reachable_from": [
+                "q1zelu"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "my50if",
+          "type": "init",
+          "clear_distance": 0.3,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -4.649554750601593,
+            13.447057749582644,
+            -0.7807963267900005
+          ],
+          "connections": [
+            {
+              "connects_to": "c5t8sb",
+              "reachable_from": [
+                "qznr46",
+                "iww2cb"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "i2o777",
+          "type": "init",
+          "clear_distance": 0.1,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -4.430602238183235,
+            -10.352775438851802,
+            -3.1407963267900003
+          ],
+          "connections": [
+            {
+              "connects_to": "r7ap9d",
+              "reachable_from": [
+                "gzfgpp"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "51vt79",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -3.631558083896527,
+            -9.152138757961099,
+            -3.1407963267900003
+          ],
+          "connections": [
+            {
+              "connects_to": "i8dzp1",
+              "reachable_from": [
+                "3t5o2w"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "hbcl5e",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2333502629021305,
+            -6.9010246139626,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "7izsb2",
+              "reachable_from": [
+                "6jmqy8"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "c6x8a9",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.833341475257734,
+            -6.913095060252556,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "b12mcp",
+              "reachable_from": [
+                "uzxfro"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "tbncqi",
+          "type": "init",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.833341158189564,
+            -6.913891386968186,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "0w8j2y",
+              "reachable_from": [
+                "z2a0ae"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "mjmby2",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2448173676072005,
+            7.498970820255761,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "gqwfm3",
+              "reachable_from": [
+                "nje5kf"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "nje5kf",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2457729596659566,
+            8.698970439773957,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "mjmby2",
+              "reachable_from": [
+                "node_1586"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ppsjeh",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.8476435030704454,
+            11.046899245203123,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "q1zelu",
+              "reachable_from": [
+                "/input_gate_1/5bqhqc"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "y1uv2m",
+          "type": "init",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.847643186002276,
+            11.046102918487492,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "ndc588",
+              "reachable_from": [
+                "/input_gate_1/2i21fs"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "b12mcp",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.834161691774833,
+            -5.883095386832772,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "r3csff",
+              "reachable_from": [
+                "c6x8a9"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "0w8j2y",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.834161374706664,
+            -5.883891713548402,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "node_idws2",
+              "reachable_from": [
+                "tbncqi"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "6jmqy8",
+          "type": "target",
+          "clear_distance": 0.1,
+          "pose": [
+            -2.2343058549608865,
+            -5.701024994444404,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "hbcl5e",
+              "reachable_from": [
+                "a2xgzk"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "iww2cb",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -4.650510342660349,
+            14.64705736910084,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "my50if",
+              "reachable_from": [],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "zjjuh0",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -2.2505111036239547,
+            14.648968553218353,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "ku28nx",
+              "reachable_from": [],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "vnh0i4",
+          "type": "init",
+          "clear_distance": 0.3,
+          "pose": [
+            -3.4505107231421515,
+            14.648012961159598,
+            -1.57079632679
+          ],
+          "connections": [
+            {
+              "connects_to": "c5t8sb",
+              "reachable_from": [],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "/input_gate_1/2i21fs",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.846822969485178,
+            10.016103245067708,
+            1.5707962732100014
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/input_gate_1/wagilf"
+              ],
+              "connects_to": "y1uv2m",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/input_gate_1/5bqhqc",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.846823286553348,
+            10.016899571783336,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/input_gate_1/68f0y8"
+              ],
+              "connects_to": "ppsjeh",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "input_gate_1",
+      "constraints": {
+        "max_velocity": 0.8,
+        "max_lateral_acceleration": 0.6,
+        "max_corner_size": 1,
+        "max_longitudinal_acceleration": 0.8,
+        "max_longitudinal_deceleration": 0.6
+      },
+      "pose": [
+        0,
+        0,
+        0
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "/output_gate_1/node_idws2",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838173021329117,
+            -4.8438945783797935,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/output_gate_1/0w8j2y"
+              ],
+              "connects_to": "asdss5",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/output_gate_1/r3csff",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.834989871559088,
+            -4.84309571658367,
+            1.569203673210002
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/output_gate_1/b12mcp"
+              ],
+              "connects_to": "ouxxzu",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "skrtskrt",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.843518213615313,
+            5.86610456090061,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1",
+              "reachable_from": [
+                "/cross_gate/jx9b9c"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "2wybkd",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838739050007312,
+            5.866904693645595,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "sse865",
+              "reachable_from": [
+                "/cross_gate/xg1pws"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "asdss5",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838204874655128,
+            -3.803894273994455,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "node_2",
+              "reachable_from": [
+                "/output_gate_1/node_idws2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "2i21fs",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.846822969485178,
+            10.016103245067708,
+            1.5707962732100014
+          ],
+          "connections": [
+            {
+              "connects_to": "/output_gate_1/y1uv2m",
+              "reachable_from": [
+                "wagilf"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_1",
+          "type": "target",
+          "clear_distance": 0.2,
+          "target_reservation_cost_linear": 32,
+          "target_reservation_cost_quad": 0,
+          "virtual_target_reservation_cost_linear": 0,
+          "virtual_target_reservation_cost_quad": 0,
+          "check_in_reservation_cost_linear": 4,
+          "check_in_reservation_cost_quad": 0,
+          "pose": [
+            -5.844346393399569,
+            6.906104231149713,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "bstykh",
+              "reachable_from": [
+                "skrtskrt"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ],
+          "terminal": true
+        },
+        {
+          "id": "sse865",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.844346710467739,
+            6.906900557865343,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "shc0fo",
+              "reachable_from": [
+                "2wybkd"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ouxxzu",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838205508791363,
+            -3.8030979475313154,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "h733cn",
+              "reachable_from": [
+                "/output_gate_1/r3csff"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "5bqhqc",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.846823286553348,
+            10.016899571783336,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "/output_gate_1/ppsjeh",
+              "reachable_from": [
+                "68f0y8"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "c339hw",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838324324434469,
+            -0.6538933703078855,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "/cross_gate/axqhhu",
+              "reachable_from": [
+                "asdf28"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "asdf28",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838260618039994,
+            -1.7338936620530971,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "c339hw",
+              "reachable_from": [
+                "node_2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_2",
+          "type": "target",
+          "clear_distance": 0.2,
+          "target_reservation_cost_linear": 86.4,
+          "target_reservation_cost_quad": 0,
+          "virtual_target_reservation_cost_linear": 0,
+          "virtual_target_reservation_cost_quad": 0,
+          "check_in_reservation_cost_linear": 4,
+          "check_in_reservation_cost_quad": 0,
+          "pose": [
+            -5.838236727981139,
+            -2.7638939696091165,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "asdf28",
+              "reachable_from": [
+                "asdss5"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ],
+          "terminal": true
+        },
+        {
+          "id": "8z6mhp",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838324958570698,
+            -0.6530970438496422,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "/cross_gate/nrxp8a",
+              "reachable_from": [
+                "x471uc"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "x471uc",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.8382612521762285,
+            -1.7330973355899573,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "8z6mhp",
+              "reachable_from": [
+                "h733cn"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "h733cn",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838237362117372,
+            -2.763097643145977,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "x471uc",
+              "reachable_from": [
+                "ouxxzu"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "68f0y8",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.845995106769092,
+            8.976899901534233,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "5bqhqc",
+              "reachable_from": [
+                "shc0fo"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "shc0fo",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.845166926984838,
+            7.9369002312851284,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "68f0y8",
+              "reachable_from": [
+                "sse865"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "bstykh",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.845166609916667,
+            7.9361039045694985,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "wagilf",
+              "reachable_from": [
+                "node_1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "wagilf",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.845994789700923,
+            8.976103574818604,
+            1.5723889803895872
+          ],
+          "connections": [
+            {
+              "connects_to": "2i21fs",
+              "reachable_from": [
+                "bstykh"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "/cross_gate/jx9b9c",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.838706562545065,
+            4.826108062797117,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/cross_gate/4gyl65"
+              ],
+              "connects_to": "skrtskrt",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/cross_gate/xg1pws",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.8387071966813,
+            4.826904389260257,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/cross_gate/609u39"
+              ],
+              "connects_to": "2wybkd",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross_gate",
+      "constraints": {
+        "max_corner_size": 1,
+        "max_lateral_acceleration": 0.8,
+        "max_longitudinal_acceleration": 1,
+        "max_longitudinal_deceleration": 0.8,
+        "max_velocity": 0.8,
+        "max_yaw_rate": 2,
+        "max_yaw_acceleration": 2
+      },
+      "pose": [
+        0,
+        0,
+        0
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "/input_gate_1/c339hw",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838324324434469,
+            -0.6538933703078855,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/input_gate_1/asdf28"
+              ],
+              "connects_to": "axqhhu",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/input_gate_1/8z6mhp",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838324958570698,
+            -0.6530970438496422,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/input_gate_1/x471uc"
+              ],
+              "connects_to": "nrxp8a",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "jx9b9c",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.838706562545065,
+            4.826108062797117,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "/input_gate_1/skrtskrt",
+              "reachable_from": [
+                "4gyl65"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "xg1pws",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.8387071966813,
+            4.826904389260257,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "/input_gate_1/2wybkd",
+              "reachable_from": [
+                "609u39"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "65pcf1",
+          "type": "init",
+          "clear_distance": 0.05,
+          "pose": [
+            -5.340078240737878,
+            1.5465040939929156,
+            1.13
+          ],
+          "connections": [
+            {
+              "connects_to": "caejlm",
+              "reachable_from": [
+                "axqhhu"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "nrxp8a",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.838484224170429,
+            0.5469032098047857,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "x8b0k0",
+              "reachable_from": [
+                "/input_gate_1/8z6mhp"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [
+                "65pcf1"
+              ],
+              "control_points": [
+                {
+                  "pose": [
+                    -5.338523723696216,
+                    1.596505347790316,
+                    2.01
+                  ],
+                  "blocking_neighbour": [],
+                  "clear_distance": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "x8b0k0",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.838563223222003,
+            2.646107485775846,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "4gyl65",
+              "reachable_from": [
+                "nrxp8a"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "caejlm",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.838563857358234,
+            2.646903812234089,
+            1.569203673210002
+          ],
+          "connections": [
+            {
+              "connects_to": "609u39",
+              "reachable_from": [
+                "65pcf1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "axqhhu",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.838483590034198,
+            0.5461068833465423,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "65pcf1",
+              "reachable_from": [
+                "/input_gate_1/c339hw"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "4gyl65",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.838674709219054,
+            3.7861077584117786,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "jx9b9c",
+              "reachable_from": [
+                "x8b0k0"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "609u39",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.83867534335529,
+            3.7869040848749185,
+            1.5692036732100016
+          ],
+          "connections": [
+            {
+              "connects_to": "xg1pws",
+              "reachable_from": [
+                "caejlm"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": {
+    "version": "0.0.3",
+    "changelog": "",
+    "design_tool_version": "v1.2.1"
+  }
+}

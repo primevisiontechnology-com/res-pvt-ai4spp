@@ -1,0 +1,723 @@
+{
+  "zones": [
+    {
+      "id": "input_gate_1",
+      "constraints": {
+        "max_velocity": 0.8,
+        "max_lateral_acceleration": 0.6,
+        "max_corner_size": 1,
+        "max_longitudinal_acceleration": 0.8,
+        "max_longitudinal_deceleration": 0.6
+      },
+      "pose": [
+        0.0,
+        0.0,
+        1.57
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "/output_gate_1/node_idws2",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988173021329118,
+            -4.893894578379793,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "reachable_from": [],
+              "connects_to": "asdss5",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/output_gate_1/r3csff",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.984989871559089,
+            -4.8930957165836695,
+            1.5692036732100014
+          ],
+          "connections": [
+            {
+              "reachable_from": [],
+              "connects_to": "ouxxzu",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "skrtskrt",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.993518213615314,
+            5.816104560900611,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "node_1",
+              "reachable_from": [
+                "/cross_gate/jx9b9c"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "2wybkd",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.988739050007313,
+            5.816904693645595,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "sse865",
+              "reachable_from": [
+                "/cross_gate/xg1pws"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "asdss5",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988204874655128,
+            -3.8538942739944546,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "node_2",
+              "reachable_from": [
+                "/output_gate_1/node_idws2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "2i21fs",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "max_velocity": 1,
+          "max_longitudinal_acceleration": 1,
+          "max_longitudinal_deceleration": 1,
+          "max_lateral_acceleration": 0.8,
+          "pose": [
+            -5.996822969485178,
+            9.966103245067707,
+            1.5707962732100005
+          ],
+          "connections": [
+          ]
+        },
+        {
+          "id": "node_1",
+          "type": "target",
+          "clear_distance": 0.2,
+          "target_reservation_cost_linear": 32,
+          "target_reservation_cost_quad": 0,
+          "virtual_target_reservation_cost_linear": 0,
+          "virtual_target_reservation_cost_quad": 0,
+          "check_in_reservation_cost_linear": 4,
+          "check_in_reservation_cost_quad": 0,
+          "pose": [
+            -5.994346393399569,
+            6.856104231149713,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "bstykh",
+              "reachable_from": [
+                "skrtskrt"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ],
+          "terminal": true
+        },
+        {
+          "id": "sse865",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.994346710467739,
+            6.856900557865343,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "shc0fo",
+              "reachable_from": [
+                "2wybkd"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "ouxxzu",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.9882055087913635,
+            -3.853097947531315,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "h733cn",
+              "reachable_from": [
+                "/output_gate_1/r3csff"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "5bqhqc",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.996823286553348,
+            9.966899571783335,
+            1.5692036732100012
+          ],
+          "connections": []
+        },
+        {
+          "id": "c339hw",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988324324434469,
+            -0.7038933703078856,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "/cross_gate/axqhhu",
+              "reachable_from": [
+                "asdf28"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "asdf28",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988260618039995,
+            -1.7838936620530972,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "c339hw",
+              "reachable_from": [
+                "node_2"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "node_2",
+          "type": "target",
+          "clear_distance": 0.2,
+          "target_reservation_cost_linear": 86.4,
+          "target_reservation_cost_quad": 0,
+          "virtual_target_reservation_cost_linear": 0,
+          "virtual_target_reservation_cost_quad": 0,
+          "check_in_reservation_cost_linear": 4,
+          "check_in_reservation_cost_quad": 0,
+          "pose": [
+            -5.988236727981139,
+            -2.8138939696091163,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "asdf28",
+              "reachable_from": [
+                "asdss5"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ],
+          "terminal": true
+        },
+        {
+          "id": "8z6mhp",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.988324958570699,
+            -0.7030970438496422,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "/cross_gate/nrxp8a",
+              "reachable_from": [
+                "x471uc"
+              ],
+              "type": "exit",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "x471uc",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.988261252176229,
+            -1.7830973355899573,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "8z6mhp",
+              "reachable_from": [
+                "h733cn"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "h733cn",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.988237362117372,
+            -2.813097643145977,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "x471uc",
+              "reachable_from": [
+                "ouxxzu"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "68f0y8",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.995995106769092,
+            8.926899901534233,
+            1.572388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "5bqhqc",
+              "reachable_from": [
+                "shc0fo"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "shc0fo",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.995166926984838,
+            7.886900231285129,
+            1.572388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "68f0y8",
+              "reachable_from": [
+                "sse865"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "bstykh",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.995166609916668,
+            7.886103904569499,
+            1.572388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "wagilf",
+              "reachable_from": [
+                "node_1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "wagilf",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.995994789700923,
+            8.926103574818603,
+            1.572388980389586
+          ],
+          "connections": [
+            {
+              "connects_to": "2i21fs",
+              "reachable_from": [
+                "bstykh"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "/cross_gate/jx9b9c",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.988706562545065,
+            4.7761080627971175,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/cross_gate/4gyl65"
+              ],
+              "connects_to": "skrtskrt",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/cross_gate/xg1pws",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.9887071966813,
+            4.776904389260257,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "reachable_from": [
+                "/cross_gate/609u39"
+              ],
+              "connects_to": "2wybkd",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross_gate",
+      "constraints": {
+        "max_corner_size": 1,
+        "max_lateral_acceleration": 0.8,
+        "max_longitudinal_acceleration": 1,
+        "max_longitudinal_deceleration": 0.8,
+        "max_velocity": 0.8,
+        "max_yaw_rate": 2,
+        "max_yaw_acceleration": 2
+      },
+      "pose": [
+        0.0,
+        0.0,
+        1.57
+      ],
+      "type": "fixed",
+      "nodes": [
+        {
+          "id": "/input_gate_1/c339hw",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988324324434469,
+            -0.7038933703078856,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "reachable_from": [],
+              "connects_to": "axqhhu",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "/input_gate_1/8z6mhp",
+          "type": "entry_and_exit",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.988324958570699,
+            -0.7030970438496422,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "reachable_from": [],
+              "connects_to": "nrxp8a",
+              "blocking_neighbours": [],
+              "control_points": [],
+              "type": "entry"
+            }
+          ]
+        },
+        {
+          "id": "jx9b9c",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.988706562545065,
+            4.7761080627971175,
+            1.5692036732100005
+          ],
+          "connections": []
+        },
+        {
+          "id": "xg1pws",
+          "type": "entry_and_exit",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.9887071966813,
+            4.776904389260257,
+            1.5692036732100012
+          ],
+          "connections": []
+        },
+        {
+          "id": "65pcf1",
+          "type": "init",
+          "clear_distance": 0.05,
+          "pose": [
+            -5.490078240737878,
+            1.4965040939929155,
+            1.13
+          ],
+          "connections": [
+            {
+              "connects_to": "caejlm",
+              "reachable_from": [
+                "axqhhu"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "nrxp8a",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -4.9884842241704295,
+            0.49690320980478564,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "x8b0k0",
+              "reachable_from": [
+                "/input_gate_1/8z6mhp"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [
+                "65pcf1"
+              ],
+              "control_points": [
+                {
+                  "pose": [
+                    -5.4885237236962165,
+                    1.546505347790316,
+                    2.01
+                  ],
+                  "blocking_neighbour": [],
+                  "clear_distance": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "x8b0k0",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.988563223222004,
+            2.596107485775846,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "4gyl65",
+              "reachable_from": [
+                "nrxp8a"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "caejlm",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.988563857358234,
+            2.596903812234089,
+            1.5692036732100014
+          ],
+          "connections": [
+            {
+              "connects_to": "609u39",
+              "reachable_from": [
+                "65pcf1"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "axqhhu",
+          "type": "init",
+          "clear_distance": 0.2,
+          "pose": [
+            -5.988483590034198,
+            0.4961068833465423,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "65pcf1",
+              "reachable_from": [
+                "/input_gate_1/c339hw"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "4gyl65",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -5.988674709219055,
+            3.736107758411779,
+            1.5692036732100005
+          ],
+          "connections": [
+            {
+              "connects_to": "jx9b9c",
+              "reachable_from": [
+                "x8b0k0"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        },
+        {
+          "id": "609u39",
+          "type": "init",
+          "clear_distance": 0.1,
+          "pose": [
+            -4.988675343355291,
+            3.7369040848749187,
+            1.5692036732100012
+          ],
+          "connections": [
+            {
+              "connects_to": "xg1pws",
+              "reachable_from": [
+                "caejlm"
+              ],
+              "type": "normal",
+              "blocking_neighbours": [],
+              "control_points": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": {
+    "version": "0.0.1",
+    "changelog": "",
+    "design_tool_version": "v1.2.1"
+  }
+}

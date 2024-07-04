@@ -1,0 +1,862 @@
+{
+  "/input_gate_1/node_1": {
+    "type": "input"
+  },
+
+  "/input_gate_1/node_2": {
+    "type": "input"
+  },
+
+  "/output_gate_1/node_001": {
+    "type": "output",
+    "sub_directions": {
+      "001": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_002": {
+    "type": "output",
+    "sub_directions": {
+      "002": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_003": {
+    "type": "output",
+    "sub_directions": {
+      "003": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_004": {
+    "type": "output",
+    "sub_directions": {
+      "004": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_002a": {
+    "type": "output",
+    "sub_directions": {
+      "005": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_003a": {
+    "type": "output",
+    "sub_directions": {
+      "006": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_004a": {
+    "type": "output",
+    "sub_directions": {
+      "007": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_011": {
+    "type": "output",
+    "sub_directions": {
+      "008": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_012": {
+    "type": "output",
+    "sub_directions": {
+      "009": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_013": {
+    "type": "output",
+    "sub_directions": {
+      "010": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_014": {
+    "type": "output",
+    "sub_directions": {
+      "011": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_011a": {
+    "type": "output",
+    "sub_directions": {
+      "012": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_012a": {
+    "type": "output",
+    "sub_directions": {
+      "013": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_013a": {
+    "type": "output",
+    "sub_directions": {
+      "014": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_014a": {
+    "type": "output",
+    "sub_directions": {
+      "015": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_021": {
+    "type": "output",
+    "sub_directions": {
+      "016": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_022": {
+    "type": "output",
+    "sub_directions": {
+      "017": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_023": {
+    "type": "output",
+    "sub_directions": {
+      "018": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_024": {
+    "type": "output",
+    "sub_directions": {
+      "019": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_021a": {
+    "type": "output",
+    "sub_directions": {
+      "020": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_022a": {
+    "type": "output",
+    "sub_directions": {
+      "021": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_023a": {
+    "type": "output",
+    "sub_directions": {
+      "022": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_024a": {
+    "type": "output",
+    "sub_directions": {
+      "023": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_031": {
+    "type": "output",
+    "sub_directions": {
+      "024": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_032": {
+    "type": "output",
+    "sub_directions": {
+      "025": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_033": {
+    "type": "output",
+    "sub_directions": {
+      "026": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_034": {
+    "type": "output",
+    "sub_directions": {
+      "027": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_081": {
+    "type": "output",
+    "sub_directions": {
+      "028": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_082": {
+    "type": "output",
+    "sub_directions": {
+      "029": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_083": {
+    "type": "output",
+    "sub_directions": {
+      "020": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_084": {
+    "type": "output",
+    "sub_directions": {
+      "031": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_081a": {
+    "type": "output",
+    "sub_directions": {
+      "032": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_082a": {
+    "type": "output",
+    "sub_directions": {
+      "033": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_083a": {
+    "type": "output",
+    "sub_directions": {
+      "034": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_084a": {
+    "type": "output",
+    "sub_directions": {
+      "035": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_091": {
+    "type": "output",
+    "sub_directions": {
+      "036": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_092": {
+    "type": "output",
+    "sub_directions": {
+      "037": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_093": {
+    "type": "output",
+    "sub_directions": {
+      "038": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_094": {
+    "type": "output",
+    "sub_directions": {
+      "039": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_091a": {
+    "type": "output",
+    "sub_directions": {
+      "040": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_092a": {
+    "type": "output",
+    "sub_directions": {
+      "041": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_093a": {
+    "type": "output",
+    "sub_directions": {
+      "042": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_094a": {
+    "type": "output",
+    "sub_directions": {
+      "043": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_101": {
+    "type": "output",
+    "sub_directions": {
+      "044": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_102": {
+    "type": "output",
+    "sub_directions": {
+      "045": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_103": {
+    "type": "output",
+    "sub_directions": {
+      "046": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_104": {
+    "type": "output",
+    "sub_directions": {
+      "047": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_101a": {
+    "type": "output",
+    "sub_directions": {
+      "048": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_102a": {
+    "type": "output",
+    "sub_directions": {
+      "049": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_103a": {
+    "type": "output",
+    "sub_directions": {
+      "050": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_104a": {
+    "type": "output",
+    "sub_directions": {
+      "051": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_111": {
+    "type": "output",
+    "sub_directions": {
+      "052": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_112": {
+    "type": "output",
+    "sub_directions": {
+      "053": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_113": {
+    "type": "output",
+    "sub_directions": {
+      "054": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_114": {
+    "type": "output",
+    "sub_directions": {
+      "055": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1023": {
+    "type": "output",
+    "sub_directions": {
+      "reject": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2023": {
+    "type": "output",
+    "sub_directions": {
+      "reject": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1009": {
+    "type": "output",
+    "sub_directions": {
+      "056": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1010": {
+    "type": "output",
+    "sub_directions": {
+      "057": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1011": {
+    "type": "output",
+    "sub_directions": {
+      "059": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1012": {
+    "type": "output",
+    "sub_directions": {
+      "060": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1012a": {
+    "type": "output",
+    "sub_directions": {
+      "061": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1013": {
+    "type": "output",
+    "sub_directions": {
+      "063": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1014a": {
+    "type": "output",
+    "sub_directions": {
+      "062": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_1017": {
+    "type": "output",
+    "sub_directions": {
+      "063": {
+        "side": 1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2009": {
+    "type": "output",
+    "sub_directions": {
+      "065": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2010": {
+    "type": "output",
+    "sub_directions": {
+      "066": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2012a": {
+    "type": "output",
+    "sub_directions": {
+      "067": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2011": {
+    "type": "output",
+    "sub_directions": {
+      "068": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2017": {
+    "type": "output",
+    "sub_directions": {
+      "069": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  },
+  "/output_gate_1/node_2019": {
+    "type": "output",
+    "sub_directions": {
+      "070": {
+        "side": -1,
+        "container": {
+          "type": "dropoff-box",
+          "blocking_nodes": []
+        }
+      }
+    }
+  }
+}

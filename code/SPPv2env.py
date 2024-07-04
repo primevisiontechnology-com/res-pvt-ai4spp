@@ -309,6 +309,9 @@ def plot_graph(self, locs, edges, ax=None):
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
 
+    if ax.figure:
+        ax.figure.show()
+
     return ax
 
 def generate_data_slow(self, batch_size) -> TensorDict:
@@ -435,3 +438,4 @@ class SPPv2Env(RL4COEnvBase):
     _make_spec = _make_spec
     generate_data = generate_data
     render = render
+    plot_graph = plot_graph

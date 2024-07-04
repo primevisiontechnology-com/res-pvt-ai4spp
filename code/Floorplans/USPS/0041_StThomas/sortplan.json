@@ -1,0 +1,257 @@
+{
+	"/output_gate_1/node_reject": {
+	  "type": "output",
+	  "sub_directions": {
+		"reject": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_001": {
+	  "type": "output",
+	  "sub_directions": {
+		"001": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_002": {
+	  "type": "output",
+	  "sub_directions": {
+		"002": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_003": {
+	  "type": "output",
+	  "sub_directions": {
+		"003": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_004": {
+	  "type": "output",
+	  "sub_directions": {
+		"004": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_005": {
+	  "type": "output",
+	  "sub_directions": {
+		"005": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_006": {
+	  "type": "output",
+	  "sub_directions": {
+		"006": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_007": {
+	  "type": "output",
+	  "sub_directions": {
+		"007": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_008": {
+	  "type": "output",
+	  "sub_directions": {
+		"00805": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_009": {
+	  "type": "output",
+	  "sub_directions": {
+		"00830": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_010": {
+	  "type": "output",
+	  "sub_directions": {
+		"00831": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_011": {
+	  "type": "output",
+	  "sub_directions": {
+		"00803": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_012": {
+	  "type": "output",
+	  "sub_directions": {
+		"00804": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_013": {
+	  "type": "output",
+	  "sub_directions": {
+		"008": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_014": {
+	  "type": "output",
+	  "sub_directions": {
+		"009": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_015": {
+	  "type": "output",
+	  "sub_directions": {
+		"010": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_016": {
+	  "type": "output",
+	  "sub_directions": {
+		"012": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_017": {
+	  "type": "output",
+	  "sub_directions": {
+		"058": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_018": {
+	  "type": "output",
+	  "sub_directions": {
+		"059": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_019": {
+	  "type": "output",
+	  "sub_directions": {
+		"060": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/output_gate_1/node_020": {
+	  "type": "output",
+	  "sub_directions": {
+		"650": {
+		  "side": -1,
+		  "container": {
+			"type": "dropoff-box",
+			"blocking_nodes": []
+		  }
+		}
+	  }
+	},
+	"/input_gate_1/node_1": {
+	  "type": "input"
+	}
+  }
