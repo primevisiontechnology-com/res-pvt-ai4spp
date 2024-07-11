@@ -238,6 +238,7 @@ def _make_spec(self, td_params):
 def generate_data(self, batch_size) -> TensorDict:
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
+    print(f"batch_size: {batch_size}")
 
     grid_size = int(self.num_loc ** (1/2))
 
@@ -246,8 +247,12 @@ def generate_data(self, batch_size) -> TensorDict:
     x, y = torch.meshgrid(grid_indices, grid_indices, indexing="ij")
     locs = torch.stack((x.flatten().float() / grid_size, y.flatten().float() / grid_size), dim=1)
 
+    # Check the shape of self.locs before unsqueezing
+    print(f"self.locs.shape before unsqueeze: {locs.shape}")
     # Add batch dimension and repeat the locs tensor for each item in the batch
     locs = locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    # Check the shape of self.locs after unsqueezing and repeating
+    print(f"self.locs.shape after unsqueeze and repeat: {locs.shape}")
     
     # Generate the adjacency matrix
     edges = torch.zeros((batch_size, grid_size*grid_size, grid_size*grid_size), dtype=torch.bool)

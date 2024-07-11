@@ -250,8 +250,15 @@ def _make_spec(self, td_params):
 def generate_data(self, batch_size) -> TensorDict:
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
+    print(f"batch_size: {batch_size}")
+
+    # Check the shape of self.locs before unsqueezing
+    print(f"self.locs.shape before unsqueeze: {self.locs.shape}")
     # Add batch dimension and repeat the locs tensor for each item in the batch
-    self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    if self.locs.dim() == 2:
+        self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    # Check the shape of self.locs after unsqueezing and repeating
+    print(f"self.locs.shape after unsqueeze and repeat: {self.locs.shape}")
 
     # Generate edges tensors
     edges = torch.zeros((batch_size, self.num_loc, self.num_loc), dtype=torch.bool)
