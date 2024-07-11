@@ -33,7 +33,14 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     init_edges = td["edges"] if td is not None else None
     # If no batch_size is provided, use the batch_size of the initial locations
     if batch_size is None:
-        batch_size = self.batch_size if init_locs is None else init_locs.shape[:-2]
+        if init_locs is None:
+            batch_size = self.batch_size
+            print("init_locs is None, batch_size = self.batch_size")
+        else:
+            batch_size = init_locs.shape[:-2]
+            print("init_locs is not None, batch_size = init_locs.shape[:-2]")
+    else:
+        print(f"batch_size in reset: {batch_size}")
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
@@ -248,6 +255,9 @@ def _make_spec(self, td_params):
 
 
 def generate_data(self, batch_size) -> TensorDict:
+    # Temporary set batch_size to 3 regardless, need to change
+    batch_size = 3
+
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
     print(f"batch_size: {batch_size}")
