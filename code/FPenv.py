@@ -123,9 +123,10 @@ def _step(self, td: TensorDict) -> TensorDict:
     # Mark the current node as visited
     available = get_action_mask(self, td)
 
+    # Yifei: Allowing revisiting the current node
     # Mask the current node to prevent revisiting
-    available = available & ~td["current_node"].unsqueeze(-1).eq(
-        torch.arange(available.shape[-1], device=available.device))
+    # available = available & ~td["current_node"].unsqueeze(-1).eq(
+    #     torch.arange(available.shape[-1], device=available.device))
 
     # Create a tensor of batch indices
     # batch_indices = torch.arange(len(current_node))
@@ -137,7 +138,8 @@ def _step(self, td: TensorDict) -> TensorDict:
     # available = available & neighbors
 
     done = current_node == td["end_node"]
-    done |= step_count >= 100
+    # Yifei: Change the 100 steps limits to 1000
+    done |= step_count >= 1000
     # print("done: ", done)
 
     # done = torch.sum(td["action_mask"], dim=-1) == 0
@@ -188,7 +190,7 @@ def get_reward(self, td, actions) -> TensorDict:
     # Every step has a reward of -1
     step_count = td["step_count"]
     # if any of the batch element has reached maximum steps, set to infinity
-    step_mask = step_count >= 100
+    step_mask = step_count >= 1000
     # give a reward of the step count, but inf for the non-done elements
     reward = torch.where(step_mask, torch.tensor(-1000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
@@ -255,8 +257,8 @@ def _make_spec(self, td_params):
 
 
 def generate_data(self, batch_size) -> TensorDict:
-    # Temporary set batch_size to 3 regardless, need to change
-    batch_size = 3
+    # Temporary set batch_size regardless, need to change
+    batch_size = 4
 
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
