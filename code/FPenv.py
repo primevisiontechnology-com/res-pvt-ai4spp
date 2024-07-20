@@ -33,7 +33,14 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     init_edges = td["edges"] if td is not None else None
     # If no batch_size is provided, use the batch_size of the initial locations
     if batch_size is None:
-        batch_size = self.batch_size if init_locs is None else init_locs.shape[:-2]
+        if init_locs is None:
+            batch_size = self.batch_size
+            print("init_locs is None, batch_size = self.batch_size")
+        else:
+            batch_size = init_locs.shape[:-2]
+            print("init_locs is not None, batch_size = init_locs.shape[:-2]")
+    else:
+        print(f"batch_size in reset: {batch_size}")
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
@@ -116,9 +123,10 @@ def _step(self, td: TensorDict) -> TensorDict:
     # Mark the current node as visited
     available = get_action_mask(self, td)
 
+    # Yifei: Allowing revisiting the current node
     # Mask the current node to prevent revisiting
-    available = available & ~td["current_node"].unsqueeze(-1).eq(
-        torch.arange(available.shape[-1], device=available.device))
+    # available = available & ~td["current_node"].unsqueeze(-1).eq(
+    #     torch.arange(available.shape[-1], device=available.device))
 
     # Create a tensor of batch indices
     # batch_indices = torch.arange(len(current_node))
@@ -130,7 +138,8 @@ def _step(self, td: TensorDict) -> TensorDict:
     # available = available & neighbors
 
     done = current_node == td["end_node"]
-    done |= step_count >= 100
+    # Yifei: Change the 100 steps limits to 1000
+    done |= step_count >= 1000
     # print("done: ", done)
 
     # done = torch.sum(td["action_mask"], dim=-1) == 0
@@ -181,7 +190,7 @@ def get_reward(self, td, actions) -> TensorDict:
     # Every step has a reward of -1
     step_count = td["step_count"]
     # if any of the batch element has reached maximum steps, set to infinity
-    step_mask = step_count >= 100
+    step_mask = step_count >= 1000
     # give a reward of the step count, but inf for the non-done elements
     reward = torch.where(step_mask, torch.tensor(-1000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
@@ -248,10 +257,20 @@ def _make_spec(self, td_params):
 
 
 def generate_data(self, batch_size) -> TensorDict:
+    # Temporary set batch_size regardless, need to change
+    batch_size = 4
+
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
+    print(f"batch_size: {batch_size}")
+
+    # Check the shape of self.locs before unsqueezing
+    print(f"self.locs.shape before unsqueeze: {self.locs.shape}")
     # Add batch dimension and repeat the locs tensor for each item in the batch
-    self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    if self.locs.dim() == 2:
+        self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
+    # Check the shape of self.locs after unsqueezing and repeating
+    print(f"self.locs.shape after unsqueeze and repeat: {self.locs.shape}")
 
     # Generate edges tensors
     edges = torch.zeros((batch_size, self.num_loc, self.num_loc), dtype=torch.bool)
