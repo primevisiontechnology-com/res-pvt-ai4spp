@@ -322,30 +322,6 @@ def plot_graph(self, td, ax=None):
 
     return ax
 
-
-def generate_data_slow(self, batch_size) -> TensorDict:
-    batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
-
-    num_loc = int(self.num_loc ** (1 / 2))
-
-    # Generate random locations for the nodes
-    locs = {}
-    grid_size = num_loc
-    for i in range(grid_size):
-        for j in range(grid_size):
-            x = i / grid_size
-            y = j / grid_size
-            locs[(i, j)] = (x, y)
-    locs = torch.tensor(list(locs.values()), dtype=torch.float32)
-    locs = locs.unsqueeze(0).expand(batch_size + [-1, -1])
-    # Generate a random adjacent matrix for the edges
-    edges = torch.zeros((*batch_size, num_loc, num_loc), dtype=torch.bool)
-    for i in range(edges.shape[0]):
-        matrix = generate_adjacency_matrix(grid_size)
-        edges[i] = torch.tensor(matrix, dtype=torch.bool)
-    return TensorDict({"locs": locs, "edges": edges}, batch_size=batch_size)
-
-
 def render(self, td, actions=None, ax=None):
     import matplotlib.pyplot as plt
     import numpy as np
