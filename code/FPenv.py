@@ -35,10 +35,8 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     if batch_size is None:
         if init_locs is None:
             batch_size = self.batch_size
-            print("init_locs is None, batch_size = self.batch_size")
         else:
             batch_size = init_locs.shape[:-2]
-            print("init_locs is not None, batch_size = init_locs.shape[:-2]")
     else:
         print(f"batch_size in reset: {batch_size}")
     # If no device is provided, use the device of the initial locations
@@ -192,10 +190,10 @@ def get_reward(self, td, actions) -> TensorDict:
     # if any of the batch element has reached maximum steps, set to infinity
     step_mask = step_count >= 1000
     # give a reward of the step count, but inf for the non-done elements
-    reward = torch.where(step_mask, torch.tensor(-1000.0, dtype=torch.float32, device=step_count.device),
+    reward = torch.where(step_mask, torch.tensor(-10000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
-    # if this batch element has reached maximum steps,
-    # print("reward: ", reward)
+
+    print("reward: ", reward)
     return reward
 
 
@@ -262,15 +260,10 @@ def generate_data(self, batch_size) -> TensorDict:
 
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
-    print(f"batch_size: {batch_size}")
 
-    # Check the shape of self.locs before unsqueezing
-    print(f"self.locs.shape before unsqueeze: {self.locs.shape}")
     # Add batch dimension and repeat the locs tensor for each item in the batch
     if self.locs.dim() == 2:
         self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
-    # Check the shape of self.locs after unsqueezing and repeating
-    print(f"self.locs.shape after unsqueeze and repeat: {self.locs.shape}")
 
     # Generate edges tensors
     edges = torch.zeros((batch_size, self.num_loc, self.num_loc), dtype=torch.bool)
@@ -312,7 +305,6 @@ def plot_graph(self, td, ax=None):
     edges = td["edges"]
 
     x_i, y_i = locs[:, 0], locs[:, 1]
-    print(f"edges shape: {edges.shape}")  # Debugging: Print the shape of edges
 
     for i in range(edges.shape[0]):
         for j in range(edges.shape[1]):
@@ -438,7 +430,6 @@ def process_fp(self, fp_path: str):
     self.all_cells = self.fp.getCells()
     # Get the number of cells
     self.num_loc = len(self.all_cells)
-    print("num_loc: " + str(self.num_loc))
 
     # Put cell ids (keys) in dict into a cell list
     idList = list(self.all_cells.keys())
@@ -496,9 +487,6 @@ def generate_adjacency_matrix_fp(self):
 
             # Mark the corresponding position in the adjacency_matrix as 1
             adjacency_matrix[i, neighbor_index] = 1
-
-    print("Row Length: " + str(len(adjacency_matrix)))
-    print("Column Length: " + str(len(adjacency_matrix[0])))
 
     return adjacency_matrix
 
