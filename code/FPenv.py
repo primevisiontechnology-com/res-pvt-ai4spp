@@ -198,6 +198,31 @@ def get_reward(self, td, actions) -> TensorDict:
     reward = torch.where(step_mask, torch.tensor(-10000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
 
+    # Initialize penalty for repetition
+    repetition_penalty = torch.tensor(-50.0, dtype=torch.float32, device=step_count.device)
+
+    # Track and penalize for repeated visits
+    current_node = td["current_node"]
+
+    if "visited_nodes" not in td:
+        # Initialize visited_nodes if not already present, using a list of sets to track visited nodes for each batch element
+        td["visited_nodes"] = [set() for _ in range(current_node.size(0))]
+    visited_nodes = td["visited_nodes"]
+
+    # Check for repetition
+    repetition_mask = torch.tensor([current_node[i].item() in visited_nodes[i] for i in range(current_node.size(0))],
+                                   device=step_count.device)
+
+    repetition_penalty_applied = torch.where(repetition_mask, repetition_penalty,
+                                             torch.tensor(0.0, dtype=torch.float32, device=step_count.device))
+
+    # Update visited nodes
+    for i in range(current_node.size(0)):
+        visited_nodes[i].add(current_node[i].item())
+
+    # Combine the original reward with the repetition penalty
+    reward += repetition_penalty_applied
+
     print("reward: ", reward)
     return reward
 
