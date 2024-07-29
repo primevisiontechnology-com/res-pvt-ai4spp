@@ -60,13 +60,13 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
 
     # Initialize a start node
     start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
-    start_indices = torch.randint(0, len(self.start_nodes), (batch_size, ), device=device)
+    start_indices = torch.randint(0, len(self.start_nodes), (batch_size), device=device)
     first_node = start_nodes_tensor[start_indices]
 
     # Initialize the end node to a random node until it is unequal to the start node
     end_nodes_tensor = torch.tensor(self.end_nodes, device=device)
     while True:
-        end_indices = torch.randint(0, len(self.end_nodes), (batch_size, ), device=device)
+        end_indices = torch.randint(0, len(self.end_nodes), (batch_size), device=device)
         end_node = end_nodes_tensor[end_indices]
         if not torch.any(torch.eq(first_node, end_node)):
             break
