@@ -58,11 +58,16 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     num_loc = init_locs.shape[-2]
     # print("num_loc: ", num_loc)
 
-    # Initialize a start and end node
-    first_node = torch.randint(0, num_loc, (batch_size), device=device)
+    # Initialize a start node
+    start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
+    start_indices = torch.randint(0, len(self.start_nodes), (batch_size, ), device=device)
+    first_node = start_nodes_tensor[start_indices]
+
     # Initialize the end node to a random node until it is unequal to the start node
+    end_nodes_tensor = torch.tensor(self.end_nodes, device=device)
     while True:
-        end_node = torch.randint(0, num_loc, (batch_size), device=device)
+        end_indices = torch.randint(0, len(self.end_nodes), (batch_size, ), device=device)
+        end_node = end_nodes_tensor[end_indices]
         if not torch.any(torch.eq(first_node, end_node)):
             break
 
@@ -421,8 +426,19 @@ def process_fp(self, fp_path: str):
     x_coords = []
     y_coords = []
 
+    # Record the possible start nodes and end nodes indices
+    self.start_nodes = []
+    self.end_nodes = []
+
     # Extract x and y coordinates separately
-    for cell in self.cellsList:
+    for i in range(len(self.cellsList)):
+        cell = self.cellsList[i]
+
+        if cell.getType() == "entry_and_exit":
+            self.start_nodes.append(i)
+        elif cell.getType() == "target":
+            self.end_nodes.append(i)
+
         x_coords.append(cell.pose[0])
         y_coords.append(cell.pose[1])
 
