@@ -199,10 +199,10 @@ def get_reward(self, td, actions) -> TensorDict:
                          -step_count.float())
 
     # Initialize penalty for repetition
-    repetition_penalty = torch.tensor(-50.0, dtype=torch.float32, device=step_count.device)
+    repetition_penalty = torch.tensor(-100.0, dtype=torch.float32, device=step_count.device)
 
     # Reward for new nodes
-    exploration_reward = torch.tensor(20.0, dtype=torch.float32, device=step_count.device)
+    exploration_reward = torch.tensor(50.0, dtype=torch.float32, device=step_count.device)
 
     # Track and penalize for repeated visits
     current_node = td["current_node"]
