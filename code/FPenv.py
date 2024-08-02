@@ -37,8 +37,7 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
             batch_size = self.batch_size
         else:
             batch_size = init_locs.shape[:-2]
-    else:
-        print(f"batch_size in reset: {batch_size}")
+
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
@@ -395,6 +394,9 @@ def render(self, td, actions=None, ax=None):
         if end_idx.numel() > 0:
             end_idx = end_idx[0]
             actions = actions[: end_idx + 1]
+
+    print(f"Actions Sizes: {actions.shape}")
+    print(f"Actions indices: {actions}")
 
     a_locs = gather_by_index(locs, actions, dim=0)
 
