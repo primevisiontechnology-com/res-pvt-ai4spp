@@ -519,7 +519,7 @@ def generate_adjacency_matrix_fp(self):
 
 
 class FPEnv(RL4COEnvBase):
-    """Traveling Salesman Problem (TSP) environment"""
+    """Floorplan Reinforcement Learning Environment for Python Training"""
 
     name = "tsp"
 

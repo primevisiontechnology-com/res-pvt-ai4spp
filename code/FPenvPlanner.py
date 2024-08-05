@@ -55,7 +55,6 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
 
     # Get the number of locations
     num_loc = init_locs.shape[-2]
-    # print("num_loc: ", num_loc)
 
     # Initialize a start node
     start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
@@ -69,9 +68,6 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
         end_node = end_nodes_tensor[end_indices]
         if not torch.any(torch.eq(first_node, end_node)):
             break
-
-    # print("end_node: ", end_node)
-    # print("first_node: ", first_node)
 
     batch_indices = torch.arange(len(first_node))
     available = init_edges[batch_indices, first_node]
@@ -461,18 +457,9 @@ def process_fp(self, fp_path: str):
     x_coords = []
     y_coords = []
 
-    # Record the possible start nodes and end nodes indices
-    self.start_nodes = []
-    self.end_nodes = []
-
     # Extract x and y coordinates separately
     for i in range(len(self.cellsList)):
         cell = self.cellsList[i]
-
-        if cell.getType() == "entry_and_exit":
-            self.start_nodes.append(i)
-        elif cell.getType() == "target":
-            self.end_nodes.append(i)
 
         x_coords.append(cell.pose[0])
         y_coords.append(cell.pose[1])
@@ -518,8 +505,8 @@ def generate_adjacency_matrix_fp(self):
     return adjacency_matrix
 
 
-class FPEnv(RL4COEnvBase):
-    """Traveling Salesman Problem (TSP) environment"""
+class FPenvPlanner(RL4COEnvBase):
+    """Floorplan Reinforcement Learning Environment for robot path planner C++ codes"""
 
     name = "tsp"
 
@@ -529,6 +516,8 @@ class FPEnv(RL4COEnvBase):
             max_loc: float = 1,
             td_params: TensorDict = None,
             fp_path: str = None,
+            start_node_id: str = None,
+            target_node_id: str = None,
             **kwargs,
     ):
         super().__init__(**kwargs)
@@ -536,6 +525,8 @@ class FPEnv(RL4COEnvBase):
         self.max_loc = max_loc
         self.process_fp(fp_path)
         self._make_spec(td_params)
+        self.start_node_id = start_node_id
+        self.target_node_id = target_node_id
 
     _reset = _reset
     _step = _step
