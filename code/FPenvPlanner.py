@@ -502,7 +502,7 @@ def generate_adjacency_matrix_fp(self):
     return adjacency_matrix
 
 
-class FPenvPlanner(RL4COEnvBase):
+class FPEnvPlanner(RL4COEnvBase):
     """Floorplan Reinforcement Learning Environment for robot path planner C++ codes"""
 
     name = "tsp"
