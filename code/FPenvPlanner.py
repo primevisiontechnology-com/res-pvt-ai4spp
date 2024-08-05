@@ -352,7 +352,8 @@ def plot_graph(self, td, ax=None):
 
     return ax
 
-def render(self, td, actions=None, ax=None):
+
+def render(self, td, actions=None) -> List[str]:
     td = td.detach().cpu()
 
     if actions is None:
@@ -367,7 +368,6 @@ def render(self, td, actions=None, ax=None):
     # First and end node
     end_node = td["end_node"]
     start_node = td["first_node"]
-    x_start, y_start = locs[start_node, 0], locs[start_node, 1]
 
     # gather locs in order of action if available
     if actions is None:
@@ -383,7 +383,14 @@ def render(self, td, actions=None, ax=None):
     print(f"Actions Sizes: {actions.shape}")
     print(f"Actions indices: {actions}")
 
+    # Get the list of absolute node ids from the node idx stored in actions
+    action_ids = []
+    for node_idx in actions:
+        node = self.cellsList[node_idx.item()]
+        absolute_id = "/" + node.getZoneId() + "/" + node.getId()
+        action_ids.append(absolute_id)
 
+    return action_ids
 
 
 def process_fp(self, fp_path: str):

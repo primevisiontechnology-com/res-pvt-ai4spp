@@ -31,3 +31,7 @@ if not nan_found:
 policy = model.policy.to(device)
 out = policy(td_init.clone(), infer_env, phase="test", decode_type="greedy", return_actions=True)
 actions_trained = out['actions'].cpu().detach()
+
+
+# Process the actions_trained and get the list of absolute node ids
+action_ids = infer_env.render(td_init[0], actions_trained[0])
