@@ -353,13 +353,6 @@ def plot_graph(self, td, ax=None):
     return ax
 
 def render(self, td, actions=None, ax=None):
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    if ax is None:
-        # Create a plot of the nodes
-        _, ax = plt.subplots()
-
     td = td.detach().cpu()
 
     if actions is None:
@@ -373,7 +366,6 @@ def render(self, td, actions=None, ax=None):
 
     # First and end node
     end_node = td["end_node"]
-    x_end, y_end = locs[end_node, 0], locs[end_node, 1]
     start_node = td["first_node"]
     x_start, y_start = locs[start_node, 0], locs[start_node, 1]
 
@@ -391,12 +383,7 @@ def render(self, td, actions=None, ax=None):
     print(f"Actions Sizes: {actions.shape}")
     print(f"Actions indices: {actions}")
 
-    a_locs = gather_by_index(locs, actions, dim=0)
 
-    # Cat the start node to the start of the action locations
-    a_locs = torch.cat([torch.tensor([[x_start, y_start]]), a_locs], dim=0)
-    x, y = a_locs[:, 0], a_locs[:, 1]
-    
 
 
 def process_fp(self, fp_path: str):
