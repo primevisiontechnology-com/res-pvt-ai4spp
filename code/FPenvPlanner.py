@@ -50,21 +50,21 @@ def _reset(self, td: Optional[TensorDict] = None) -> TensorDict:
     # If batch_size is an integer, convert it to a list
     batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
 
-    # Get the number of locations
-    num_loc = init_locs.shape[-2]
+    # Get the start node
+    if '/' in self.start_node_id:
+        parts = self.start_node_id.split('/')
+        cell_id = parts[-1]
+    else:
+        cell_id = self.start_node_id
+    first_node = torch.full((batch_size,), self.idDic[cell_id])
 
-    # Initialize a start node
-    start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
-    start_indices = torch.randint(0, len(self.start_nodes), (batch_size), device=device)
-    first_node = start_nodes_tensor[start_indices]
-
-    # Initialize the end node to a random node until it is unequal to the start node
-    end_nodes_tensor = torch.tensor(self.end_nodes, device=device)
-    while True:
-        end_indices = torch.randint(0, len(self.end_nodes), (batch_size), device=device)
-        end_node = end_nodes_tensor[end_indices]
-        if not torch.any(torch.eq(first_node, end_node)):
-            break
+    # Get the target node
+    if '/' in self.target_node_id:
+        parts = self.target_node_id.split('/')
+        cell_id = parts[-1]
+    else:
+        cell_id = self.target_node_id
+    end_node = torch.full((batch_size,), self.idDic[cell_id])
 
     batch_indices = torch.arange(len(first_node))
     available = init_edges[batch_indices, first_node]
