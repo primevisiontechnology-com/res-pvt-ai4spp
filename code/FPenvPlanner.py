@@ -396,41 +396,8 @@ def render(self, td, actions=None, ax=None):
     # Cat the start node to the start of the action locations
     a_locs = torch.cat([torch.tensor([[x_start, y_start]]), a_locs], dim=0)
     x, y = a_locs[:, 0], a_locs[:, 1]
+    
 
-    # Plot the visited nodes
-    ax.scatter(locs[:, 0], locs[:, 1], color="tab:blue")
-
-    # print("end node: ", end_node)
-    # Highlight the start node in green
-    ax.scatter(x[0], y[0], color="tab:green")
-
-    # Highlight the end node in red
-    ax.scatter(x[-1], y[-1], color="tab:red")
-
-    # Plot the edges
-    edges = td["edges"]
-    x_i, y_i = locs[:, 0], locs[:, 1]
-    for i in range(edges.shape[0]):
-        for j in range(edges.shape[1]):
-            if edges[i, j]:
-                ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
-
-    # Add arrows between visited nodes as a quiver plot
-    dx, dy = np.diff(x), np.diff(y)
-    ax.quiver(
-        x[:-1], y[:-1], dx, dy, scale_units="xy", angles="xy", scale=1, color="r", alpha=1.0
-    )
-
-    # Highlight the last action
-    ax.scatter(x_end, y_end, color="tab:red", s=100, edgecolors="black", zorder=10)
-    # Highlight the first action
-    ax.scatter(x_start, y_start, color="tab:green", s=100, edgecolors="black", zorder=10)
-
-    # # Setup limits and show
-    # ax.set_xlim(-10.00, 10.00)
-    # ax.set_ylim(-10.00, 10.00)
-
-    ax.autoscale()
 
 def process_fp(self, fp_path: str):
     # Read the floorplan in the floorplan path
