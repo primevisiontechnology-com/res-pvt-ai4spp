@@ -35,12 +35,9 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     if batch_size is None:
         if init_locs is None:
             batch_size = self.batch_size
-            print("init_locs is None, batch_size = self.batch_size")
         else:
             batch_size = init_locs.shape[:-2]
-            print("init_locs is not None, batch_size = init_locs.shape[:-2]")
-    else:
-        print(f"batch_size in reset: {batch_size}")
+
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
@@ -60,11 +57,16 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     num_loc = init_locs.shape[-2]
     # print("num_loc: ", num_loc)
 
-    # Initialize a start and end node
-    first_node = torch.randint(0, num_loc, (batch_size), device=device)
+    # Initialize a start node
+    start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
+    start_indices = torch.randint(0, len(self.start_nodes), (batch_size), device=device)
+    first_node = start_nodes_tensor[start_indices]
+
     # Initialize the end node to a random node until it is unequal to the start node
+    end_nodes_tensor = torch.tensor(self.end_nodes, device=device)
     while True:
-        end_node = torch.randint(0, num_loc, (batch_size), device=device)
+        end_indices = torch.randint(0, len(self.end_nodes), (batch_size), device=device)
+        end_node = end_nodes_tensor[end_indices]
         if not torch.any(torch.eq(first_node, end_node)):
             break
 
@@ -192,10 +194,43 @@ def get_reward(self, td, actions) -> TensorDict:
     # if any of the batch element has reached maximum steps, set to infinity
     step_mask = step_count >= 1000
     # give a reward of the step count, but inf for the non-done elements
-    reward = torch.where(step_mask, torch.tensor(-1000.0, dtype=torch.float32, device=step_count.device),
+    reward = torch.where(step_mask, torch.tensor(-10000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
-    # if this batch element has reached maximum steps,
-    # print("reward: ", reward)
+
+    # Initialize penalty for repetition
+    repetition_penalty = torch.tensor(-100.0, dtype=torch.float32, device=step_count.device)
+
+    # Reward for new nodes
+    exploration_reward = torch.tensor(50.0, dtype=torch.float32, device=step_count.device)
+
+    # Track and penalize for repeated visits
+    current_node = td["current_node"]
+
+    if "visited_nodes" not in td:
+        # Initialize visited_nodes if not already present, using a list of sets to track visited nodes for each batch element
+        td["visited_nodes"] = [set() for _ in range(current_node.size(0))]
+    visited_nodes = td["visited_nodes"]
+
+    # Check for repetition
+    repetition_mask = torch.tensor([current_node[i].item() in visited_nodes[i] for i in range(current_node.size(0))],
+                                   device=step_count.device)
+
+    # Apply repetition penalty
+    repetition_penalty_applied = torch.where(repetition_mask, repetition_penalty,
+                                             torch.tensor(0.0, dtype=torch.float32, device=step_count.device))
+    # Apply exploration reward
+    exploration_reward_applied = torch.where(repetition_mask,
+                                             torch.tensor(0.0, dtype=torch.float32, device=step_count.device),
+                                             exploration_reward)
+
+    # Update visited nodes
+    for i in range(current_node.size(0)):
+        visited_nodes[i].add(current_node[i].item())
+
+    # Combine the original reward with the repetition penalty
+    reward += repetition_penalty_applied + exploration_reward_applied
+
+    print("reward: ", reward)
     return reward
 
 
@@ -262,15 +297,10 @@ def generate_data(self, batch_size) -> TensorDict:
 
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
-    print(f"batch_size: {batch_size}")
 
-    # Check the shape of self.locs before unsqueezing
-    print(f"self.locs.shape before unsqueeze: {self.locs.shape}")
     # Add batch dimension and repeat the locs tensor for each item in the batch
     if self.locs.dim() == 2:
         self.locs = self.locs.unsqueeze(0).repeat(batch_size, 1, 1)
-    # Check the shape of self.locs after unsqueezing and repeating
-    print(f"self.locs.shape after unsqueeze and repeat: {self.locs.shape}")
 
     # Generate edges tensors
     edges = torch.zeros((batch_size, self.num_loc, self.num_loc), dtype=torch.bool)
@@ -312,7 +342,6 @@ def plot_graph(self, td, ax=None):
     edges = td["edges"]
 
     x_i, y_i = locs[:, 0], locs[:, 1]
-    print(f"edges shape: {edges.shape}")  # Debugging: Print the shape of edges
 
     for i in range(edges.shape[0]):
         for j in range(edges.shape[1]):
@@ -329,30 +358,6 @@ def plot_graph(self, td, ax=None):
         ax.figure.show()
 
     return ax
-
-
-def generate_data_slow(self, batch_size) -> TensorDict:
-    batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
-
-    num_loc = int(self.num_loc ** (1 / 2))
-
-    # Generate random locations for the nodes
-    locs = {}
-    grid_size = num_loc
-    for i in range(grid_size):
-        for j in range(grid_size):
-            x = i / grid_size
-            y = j / grid_size
-            locs[(i, j)] = (x, y)
-    locs = torch.tensor(list(locs.values()), dtype=torch.float32)
-    locs = locs.unsqueeze(0).expand(batch_size + [-1, -1])
-    # Generate a random adjacent matrix for the edges
-    edges = torch.zeros((*batch_size, num_loc, num_loc), dtype=torch.bool)
-    for i in range(edges.shape[0]):
-        matrix = generate_adjacency_matrix(grid_size)
-        edges[i] = torch.tensor(matrix, dtype=torch.bool)
-    return TensorDict({"locs": locs, "edges": edges}, batch_size=batch_size)
-
 
 def render(self, td, actions=None, ax=None):
     import matplotlib.pyplot as plt
@@ -389,6 +394,9 @@ def render(self, td, actions=None, ax=None):
         if end_idx.numel() > 0:
             end_idx = end_idx[0]
             actions = actions[: end_idx + 1]
+
+    print(f"Actions Sizes: {actions.shape}")
+    print(f"Actions indices: {actions}")
 
     a_locs = gather_by_index(locs, actions, dim=0)
 
@@ -438,7 +446,6 @@ def process_fp(self, fp_path: str):
     self.all_cells = self.fp.getCells()
     # Get the number of cells
     self.num_loc = len(self.all_cells)
-    print("num_loc: " + str(self.num_loc))
 
     # Put cell ids (keys) in dict into a cell list
     idList = list(self.all_cells.keys())
@@ -454,8 +461,19 @@ def process_fp(self, fp_path: str):
     x_coords = []
     y_coords = []
 
+    # Record the possible start nodes and end nodes indices
+    self.start_nodes = []
+    self.end_nodes = []
+
     # Extract x and y coordinates separately
-    for cell in self.cellsList:
+    for i in range(len(self.cellsList)):
+        cell = self.cellsList[i]
+
+        if cell.getType() == "entry_and_exit":
+            self.start_nodes.append(i)
+        elif cell.getType() == "target":
+            self.end_nodes.append(i)
+
         x_coords.append(cell.pose[0])
         y_coords.append(cell.pose[1])
 
@@ -496,9 +514,6 @@ def generate_adjacency_matrix_fp(self):
 
             # Mark the corresponding position in the adjacency_matrix as 1
             adjacency_matrix[i, neighbor_index] = 1
-
-    print("Row Length: " + str(len(adjacency_matrix)))
-    print("Column Length: " + str(len(adjacency_matrix[0])))
 
     return adjacency_matrix
 
