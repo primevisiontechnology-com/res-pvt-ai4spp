@@ -26,24 +26,21 @@ from utils import compute_manhattan_distance, generate_adjacency_matrix
 # Import codes to read JSON floorplan
 from Floorplan_Codes.floorplan import Floorplan
 
-def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict:
+def _reset(self, td: Optional[TensorDict] = None) -> TensorDict:
     """Reset the environment to the initial state"""
+    # batch_size always be 1 in this class
+    batch_size = 1
+
     # If no TensorDict is provided, generate a new one
     init_locs = td["locs"] if td is not None else None
     init_edges = td["edges"] if td is not None else None
-    # If no batch_size is provided, use the batch_size of the initial locations
-    if batch_size is None:
-        if init_locs is None:
-            batch_size = self.batch_size
-        else:
-            batch_size = init_locs.shape[:-2]
 
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
     # If no initial locations are provided, generate new ones
     if init_locs is None:
-        grid_out = self.generate_data(batch_size=batch_size).to(device)
+        grid_out = self.generate_data().to(device)
         init_locs = grid_out["locs"]
         init_edges = grid_out["edges"]
 
@@ -287,9 +284,9 @@ def _make_spec(self, td_params):
     self.done_spec = UnboundedDiscreteTensorSpec(shape=(1,), dtype=torch.bool)
 
 
-def generate_data(self, batch_size) -> TensorDict:
-    # Temporary set batch_size regardless, need to change
-    batch_size = 4
+def generate_data(self) -> TensorDict:
+    # batch_size always be 1 in this class
+    batch_size = 1
 
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
