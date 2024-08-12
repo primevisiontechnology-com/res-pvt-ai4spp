@@ -37,6 +37,7 @@ def get_action_ids():
     start_node_id = request.json.get('start_node_id', None)
     target_node_id = request.json.get('target_node_id', None)
 
+    # Check if the three fields are received
     if not fp_path:
         return jsonify({"status": "error", "message": "fp_path is required"}), 400
     if not start_node_id:
