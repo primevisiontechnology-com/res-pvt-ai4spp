@@ -56,7 +56,7 @@ def _reset(self, td: Optional[TensorDict] = None) -> TensorDict:
         cell_id = parts[-1]
     else:
         cell_id = self.start_node_id
-    first_node = torch.full((batch_size,), self.idDic[cell_id])
+    first_node = torch.full(batch_size, self.idDic[cell_id])
 
     # Get the target node
     if '/' in self.target_node_id:
@@ -64,7 +64,7 @@ def _reset(self, td: Optional[TensorDict] = None) -> TensorDict:
         cell_id = parts[-1]
     else:
         cell_id = self.target_node_id
-    end_node = torch.full((batch_size,), self.idDic[cell_id])
+    end_node = torch.full(batch_size, self.idDic[cell_id])
 
     batch_indices = torch.arange(len(first_node))
     available = init_edges[batch_indices, first_node]
