@@ -11,16 +11,21 @@ def rotate(xy, xy0, theta):  # rotate x,y around xo,yo by theta (rad)
     return np.array([xr, yr])
 
 class Floorplan:
-    def __init__(self, data_path: str):
+    def __init__(self, data_path: str = None, floorplan_data: dict = None):
         self.zones = {}
         self.cells = {}
         self.directions = {}
-        self.parse_zones_nodes(data_path)
+        self.parse_zones_nodes(data_path, floorplan_data)
         #self.parse_directions()
 
-    def parse_zones_nodes(self, data_path: str):
-        with open(data_path, "r") as json_file:
-            self.data = json.load(json_file)
+    def parse_zones_nodes(self, data_path: str, floorplan_data: dict):
+        if floorplan_data:
+            self.data = floorplan_data
+        elif data_path:
+            with open(data_path, "r") as json_file:
+                self.data = json.load(json_file)
+        else:
+            return
 
         if "zones" not in self.data:
             raise Exception("No zones in design")
