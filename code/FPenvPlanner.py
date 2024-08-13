@@ -393,9 +393,9 @@ def render(self, td, actions=None) -> List[str]:
     return action_ids
 
 
-def process_fp(self, fp_path: str):
+def process_fp(self, fp_path: str, floorplan_data: dict):
     # Read the floorplan in the floorplan path
-    self.fp = Floorplan(fp_path)
+    self.fp = Floorplan(fp_path, floorplan_data)
     # Get all cells as a dictionary in fp
     self.all_cells = self.fp.getCells()
     # Get the number of cells
@@ -474,6 +474,7 @@ class FPEnvPlanner(RL4COEnvBase):
             max_loc: float = 1,
             td_params: TensorDict = None,
             fp_path: str = None,
+            floorplan_data: dict = None,
             start_node_id: str = None,
             target_node_id: str = None,
             **kwargs,
@@ -481,7 +482,7 @@ class FPEnvPlanner(RL4COEnvBase):
         super().__init__(**kwargs)
         self.min_loc = min_loc
         self.max_loc = max_loc
-        self.process_fp(fp_path)
+        self.process_fp(fp_path, floorplan_data)
         self._make_spec(td_params)
         self.start_node_id = start_node_id
         self.target_node_id = target_node_id

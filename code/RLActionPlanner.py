@@ -17,6 +17,9 @@ model = torch.load('Models/TrainOnFloorplansResults8.pth', map_location=torch.de
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
+# Global variables to store received floorplan data
+global_floorplan_data = None
+
 # Check for NaNs in a tensor dictionary
 def check_for_nans(td):
     for key, tensor in td.items():
@@ -25,27 +28,47 @@ def check_for_nans(td):
     return None
 
 
+@app.route('/upload_floorplan', methods=['POST'])
+def upload_floorplan():
+    """
+    Endpoint to upload the floorplan.
+    """
+    global global_floorplan_data
+
+    # The entire request body is the floorplan data
+    floorplan_data = request.json
+
+    if not floorplan_data:
+        return jsonify({"status": "error", "message": "Floorplan data is required"}), 400
+
+    # Assign to global variables
+    global_floorplan_data = floorplan_data
+    return jsonify({"status": "success", "message": "Floorplan data received successfully"})
+
 @app.route('/get_action_ids', methods=['POST'])
 def get_action_ids():
     """
     Endpoint to retrieve action_ids.
     """
 
-    # Extract fp_path, start_node_id, and target_node_id from the request body
-    fp_path = request.json.get('fp_path', None)
+    global global_floorplan_data
+
+    # Check if the floorplan data is there
+    if global_floorplan_data is None:
+        return jsonify({"status": "error", "message": "Floorplan data is not yet uploaded"}), 400
+
+    # Extract start_node_id and target_node_id from the request body
     start_node_id = request.json.get('start_node_id', None)
     target_node_id = request.json.get('target_node_id', None)
 
-    # Check if the three fields are received
-    if not fp_path:
-        return jsonify({"status": "error", "message": "fp_path is required"}), 400
+    # Check if start_node_id and target_node_id are received
     if not start_node_id:
         return jsonify({"status": "error", "message": "start_node_id is required"}), 400
     if not target_node_id:
         return jsonify({"status": "error", "message": "target_node_id is required"}), 400
 
     # Create the environment with the provided fp_path
-    infer_env = FPEnvPlanner(fp_path=fp_path, start_node_id=start_node_id, target_node_id=target_node_id)
+    infer_env = FPEnvPlanner(floorplan_data=global_floorplan_data, start_node_id=start_node_id, target_node_id=target_node_id)
     td_init = infer_env.reset().to(device)
 
     # Check for NaNs
