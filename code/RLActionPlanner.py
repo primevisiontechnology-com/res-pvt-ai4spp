@@ -15,8 +15,9 @@ model = torch.load('Models/TrainOnFloorplansResults8.pth', map_location=torch.de
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
-# Global variables to store received floorplan data
+# Global variables to store received floorplan data and store action_ids
 global_floorplan_data = None
+global_action_ids = None
 
 # Check for NaNs in a tensor dictionary
 def check_for_nans(td):
