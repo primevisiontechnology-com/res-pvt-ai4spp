@@ -53,6 +53,7 @@ def get_action_ids():
 
     # Ensure that the global variables are referenced here
     global global_floorplan_data
+    global global_action_ids
 
     # Check if the floorplan data is there
     if global_floorplan_data is None:
@@ -84,6 +85,7 @@ def get_action_ids():
 
     # Process the actions_trained and get the list of absolute node ids
     action_ids = infer_env.render(td_init[0], actions_trained[0])
+    global_action_ids = action_ids
 
     return jsonify({"action_ids": action_ids}), 200
 
