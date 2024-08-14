@@ -1,8 +1,6 @@
 # !pip install rl4co==0.3.3
 # !pip install torch==2.3.0
 
-# from SPPembeddings import SPPInitEmbedding, SPPContext, StaticEmbedding
-# from rl4co.models.zoo import AttentionModel, AutoregressivePolicy, POMO, POMOPolicy
 from FPenvPlanner import FPEnvPlanner
 from flask import Flask, jsonify, request
 import torch
@@ -45,12 +43,14 @@ def upload_floorplan():
     global_floorplan_data = floorplan_data
     return jsonify({"status": "success", "message": "Floorplan data received successfully"})
 
+
 @app.route('/get_action_ids', methods=['POST'])
 def get_action_ids():
     """
     Endpoint to retrieve action_ids.
     """
 
+    # Ensure that the global variables are referenced here
     global global_floorplan_data
 
     # Check if the floorplan data is there
@@ -84,7 +84,7 @@ def get_action_ids():
     # Process the actions_trained and get the list of absolute node ids
     action_ids = infer_env.render(td_init[0], actions_trained[0])
 
-    return jsonify({"status": "success", "action_ids": action_ids})
+    return jsonify({"action_ids": action_ids}), 200
 
 
 if __name__ == '__main__':
