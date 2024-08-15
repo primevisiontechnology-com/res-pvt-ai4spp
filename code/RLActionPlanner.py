@@ -15,9 +15,10 @@ model = torch.load('Models/TrainOnFloorplansResults8.pth', map_location=torch.de
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
-# Global variables to store received floorplan data and store action_ids
+# Global variables to store received floorplan data, action_ids, and cost
 global_floorplan_data = None
 global_action_ids = None
+global_cost = None
 
 # Check for NaNs in a tensor dictionary
 def check_for_nans(td):
@@ -54,6 +55,7 @@ def upload_node_ids():
     # Ensure that the global variables are referenced here
     global global_floorplan_data
     global global_action_ids
+    global global_cost
 
     # Check if the floorplan data is there
     if global_floorplan_data is None:
@@ -83,9 +85,13 @@ def upload_node_ids():
     out = policy(td_init.clone(), infer_env, phase="test", decode_type="greedy", return_actions=True)
     actions_trained = out['actions'].cpu().detach()
 
-    # Process the actions_trained and get the list of absolute node ids
+    # Process the actions_trained and get the list of absolute node ids, then save to the global variable
     action_ids = infer_env.render(td_init[0], actions_trained[0])
     global_action_ids = action_ids
+
+    # Compute the total cost, then save to the global variable
+    cost = -out['reward'][0].item()
+    global_cost = cost
 
     return jsonify({"action_ids": action_ids}), 200
 
@@ -98,6 +104,13 @@ def get_action_ids():
 
     return jsonify({"action_ids": global_action_ids}), 200
 
+@app.route('/get_cost', methods=['GET'])
+def get_cost():
+    global global_cost  # Reference the global action_ids variable
+    if global_cost is None:
+        return jsonify({"error": "Cost not set"}), 400
+
+    return jsonify({"cost": global_cost}), 200
 
 # main method
 if __name__ == '__main__':
