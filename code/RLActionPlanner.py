@@ -26,7 +26,7 @@ def check_for_nans(td):
             return key
     return None
 
-
+# This endpoint method let the client POST floorplan to the app
 @app.route('/upload_floorplan', methods=['POST'])
 def upload_floorplan():
     """
@@ -44,7 +44,7 @@ def upload_floorplan():
     global_floorplan_data = floorplan_data
     return jsonify({"status": "success", "message": "Floorplan data received successfully"})
 
-
+# This endpoint method let the client POST start_node_id and target_node_id to the app
 @app.route('/upload_node_ids', methods=['POST'])
 def upload_node_ids():
     """
@@ -89,7 +89,7 @@ def upload_node_ids():
 
     return jsonify({"action_ids": action_ids}), 200
 
-
+# This endpoint method let the client GET action_ids from the app
 @app.route('/get_action_ids', methods=['GET'])
 def get_action_ids():
     global global_action_ids  # Reference the global action_ids variable
@@ -99,5 +99,6 @@ def get_action_ids():
     return jsonify({"action_ids": global_action_ids}), 200
 
 
+# main method
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=6000)
