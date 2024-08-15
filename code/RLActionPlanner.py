@@ -45,8 +45,8 @@ def upload_floorplan():
     return jsonify({"status": "success", "message": "Floorplan data received successfully"})
 
 
-@app.route('/get_action_ids', methods=['POST'])
-def get_action_ids():
+@app.route('/upload_node_ids', methods=['POST'])
+def upload_node_ids():
     """
     Endpoint to retrieve action_ids.
     """
@@ -88,6 +88,15 @@ def get_action_ids():
     global_action_ids = action_ids
 
     return jsonify({"action_ids": action_ids}), 200
+
+
+@app.route('/get_action_ids', methods=['GET'])
+def get_action_ids():
+    global global_action_ids  # Reference the global action_ids variable
+    if global_action_ids is None:
+        return jsonify({"error": "Action IDs not set"}), 400
+
+    return jsonify({"action_ids": global_action_ids}), 200
 
 
 if __name__ == '__main__':
