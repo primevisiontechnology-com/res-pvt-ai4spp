@@ -26,24 +26,21 @@ from utils import compute_manhattan_distance, generate_adjacency_matrix
 # Import codes to read JSON floorplan
 from Floorplan_Codes.floorplan import Floorplan
 
-def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict:
+def _reset(self, td: Optional[TensorDict] = None) -> TensorDict:
     """Reset the environment to the initial state"""
+    # batch_size always be 1 in this class
+    batch_size = 1
+
     # If no TensorDict is provided, generate a new one
     init_locs = td["locs"] if td is not None else None
     init_edges = td["edges"] if td is not None else None
-    # If no batch_size is provided, use the batch_size of the initial locations
-    if batch_size is None:
-        if init_locs is None:
-            batch_size = self.batch_size
-        else:
-            batch_size = init_locs.shape[:-2]
 
     # If no device is provided, use the device of the initial locations
     device = init_locs.device if init_locs is not None else self.device
     self.to(device)
     # If no initial locations are provided, generate new ones
     if init_locs is None:
-        grid_out = self.generate_data(batch_size=batch_size).to(device)
+        grid_out = self.generate_data().to(device)
         init_locs = grid_out["locs"]
         init_edges = grid_out["edges"]
 
@@ -53,25 +50,21 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     # If batch_size is an integer, convert it to a list
     batch_size = [batch_size] if isinstance(batch_size, int) else batch_size
 
-    # Get the number of locations
-    num_loc = init_locs.shape[-2]
-    # print("num_loc: ", num_loc)
+    # Get the start node
+    if '/' in self.start_node_id:
+        parts = self.start_node_id.split('/')
+        cell_id = parts[-1]
+    else:
+        cell_id = self.start_node_id
+    first_node = torch.full(batch_size, self.idDic[cell_id])
 
-    # Initialize a start node
-    start_nodes_tensor = torch.tensor(self.start_nodes, device=device)
-    start_indices = torch.randint(0, len(self.start_nodes), (batch_size), device=device)
-    first_node = start_nodes_tensor[start_indices]
-
-    # Initialize the end node to a random node until it is unequal to the start node
-    end_nodes_tensor = torch.tensor(self.end_nodes, device=device)
-    while True:
-        end_indices = torch.randint(0, len(self.end_nodes), (batch_size), device=device)
-        end_node = end_nodes_tensor[end_indices]
-        if not torch.any(torch.eq(first_node, end_node)):
-            break
-
-    # print("end_node: ", end_node)
-    # print("first_node: ", first_node)
+    # Get the target node
+    if '/' in self.target_node_id:
+        parts = self.target_node_id.split('/')
+        cell_id = parts[-1]
+    else:
+        cell_id = self.target_node_id
+    end_node = torch.full(batch_size, self.idDic[cell_id])
 
     batch_indices = torch.arange(len(first_node))
     available = init_edges[batch_indices, first_node]
@@ -291,9 +284,9 @@ def _make_spec(self, td_params):
     self.done_spec = UnboundedDiscreteTensorSpec(shape=(1,), dtype=torch.bool)
 
 
-def generate_data(self, batch_size) -> TensorDict:
-    # Temporary set batch_size regardless, need to change
-    batch_size = 4
+def generate_data(self) -> TensorDict:
+    # batch_size always be 1 in this class
+    batch_size = 1
 
     # Ensure batch_size is an integer
     batch_size = int(batch_size[0]) if isinstance(batch_size, list) else batch_size
@@ -359,14 +352,8 @@ def plot_graph(self, td, ax=None):
 
     return ax
 
-def render(self, td, actions=None, ax=None):
-    import matplotlib.pyplot as plt
-    import numpy as np
 
-    if ax is None:
-        # Create a plot of the nodes
-        _, ax = plt.subplots()
-
+def render(self, td, actions=None) -> List[str]:
     td = td.detach().cpu()
 
     if actions is None:
@@ -380,9 +367,7 @@ def render(self, td, actions=None, ax=None):
 
     # First and end node
     end_node = td["end_node"]
-    x_end, y_end = locs[end_node, 0], locs[end_node, 1]
     start_node = td["first_node"]
-    x_start, y_start = locs[start_node, 0], locs[start_node, 1]
 
     # gather locs in order of action if available
     if actions is None:
@@ -398,50 +383,19 @@ def render(self, td, actions=None, ax=None):
     print(f"Actions Sizes: {actions.shape}")
     print(f"Actions indices: {actions}")
 
-    a_locs = gather_by_index(locs, actions, dim=0)
+    # Get the list of absolute node ids from the node idx stored in actions
+    action_ids = []
+    for node_idx in actions:
+        node = self.cellsList[node_idx.item()]
+        absolute_id = "/" + node.getZoneId() + "/" + node.getId()
+        action_ids.append(absolute_id)
 
-    # Cat the start node to the start of the action locations
-    a_locs = torch.cat([torch.tensor([[x_start, y_start]]), a_locs], dim=0)
-    x, y = a_locs[:, 0], a_locs[:, 1]
+    return action_ids
 
-    # Plot the visited nodes
-    ax.scatter(locs[:, 0], locs[:, 1], color="tab:blue")
 
-    # print("end node: ", end_node)
-    # Highlight the start node in green
-    ax.scatter(x[0], y[0], color="tab:green")
-
-    # Highlight the end node in red
-    ax.scatter(x[-1], y[-1], color="tab:red")
-
-    # Plot the edges
-    edges = td["edges"]
-    x_i, y_i = locs[:, 0], locs[:, 1]
-    for i in range(edges.shape[0]):
-        for j in range(edges.shape[1]):
-            if edges[i, j]:
-                ax.plot([x_i[i], x_i[j]], [y_i[i], y_i[j]], color='g', alpha=0.1)
-
-    # Add arrows between visited nodes as a quiver plot
-    dx, dy = np.diff(x), np.diff(y)
-    ax.quiver(
-        x[:-1], y[:-1], dx, dy, scale_units="xy", angles="xy", scale=1, color="r", alpha=1.0
-    )
-
-    # Highlight the last action
-    ax.scatter(x_end, y_end, color="tab:red", s=100, edgecolors="black", zorder=10)
-    # Highlight the first action
-    ax.scatter(x_start, y_start, color="tab:green", s=100, edgecolors="black", zorder=10)
-
-    # # Setup limits and show
-    # ax.set_xlim(-10.00, 10.00)
-    # ax.set_ylim(-10.00, 10.00)
-
-    ax.autoscale()
-
-def process_fp(self, fp_path: str):
+def process_fp(self, fp_path: str, floorplan_data: dict):
     # Read the floorplan in the floorplan path
-    self.fp = Floorplan(fp_path)
+    self.fp = Floorplan(fp_path, floorplan_data)
     # Get all cells as a dictionary in fp
     self.all_cells = self.fp.getCells()
     # Get the number of cells
@@ -461,18 +415,9 @@ def process_fp(self, fp_path: str):
     x_coords = []
     y_coords = []
 
-    # Record the possible start nodes and end nodes indices
-    self.start_nodes = []
-    self.end_nodes = []
-
     # Extract x and y coordinates separately
     for i in range(len(self.cellsList)):
         cell = self.cellsList[i]
-
-        if cell.getType() == "entry_and_exit":
-            self.start_nodes.append(i)
-        elif cell.getType() == "target":
-            self.end_nodes.append(i)
 
         x_coords.append(cell.pose[0])
         y_coords.append(cell.pose[1])
@@ -518,8 +463,8 @@ def generate_adjacency_matrix_fp(self):
     return adjacency_matrix
 
 
-class FPEnv(RL4COEnvBase):
-    """Floorplan Reinforcement Learning Environment for Python Training"""
+class FPEnvPlanner(RL4COEnvBase):
+    """Floorplan Reinforcement Learning Environment for robot path planner C++ codes"""
 
     name = "tsp"
 
@@ -529,13 +474,18 @@ class FPEnv(RL4COEnvBase):
             max_loc: float = 1,
             td_params: TensorDict = None,
             fp_path: str = None,
+            floorplan_data: dict = None,
+            start_node_id: str = None,
+            target_node_id: str = None,
             **kwargs,
     ):
         super().__init__(**kwargs)
         self.min_loc = min_loc
         self.max_loc = max_loc
-        self.process_fp(fp_path)
+        self.process_fp(fp_path, floorplan_data)
         self._make_spec(td_params)
+        self.start_node_id = start_node_id
+        self.target_node_id = target_node_id
 
     _reset = _reset
     _step = _step
