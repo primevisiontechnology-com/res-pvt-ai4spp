@@ -29,6 +29,10 @@ def check_for_nans(td):
     return None
 
 
+@app.route("/")
+def index():
+    return "<h1>The Reinforcement Learning Server is Running!</h1>"
+
 # This endpoint method let the client POST floorplan to the app
 @app.route('/upload_floorplan', methods=['POST'])
 def upload_floorplan():
