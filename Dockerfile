@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expose the port that your Flask app runs on
-EXPOSE 80
+EXPOSE 6000
 
 # Set environment variables for Flask
 ENV FLASK_APP=RLActionPlanner.py
