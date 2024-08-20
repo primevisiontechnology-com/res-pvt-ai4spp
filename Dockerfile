@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 6000
 
 # Set environment variables for Flask
-ENV FLASK_APP=RLActionPlanner.py
+ENV FLASK_APP=app.py
 ENV FLASK_ENV=production
 
 # Command to run the Flask app
