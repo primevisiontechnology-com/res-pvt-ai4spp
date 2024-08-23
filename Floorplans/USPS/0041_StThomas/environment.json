@@ -1,0 +1,169 @@
+{
+    "simulation-type": "floorplan-simulation",
+    "third-party-apps": [
+        {
+            "app": "mongod",
+            "extra": [
+                [
+                    "--dbpath",
+                    "/data/db"
+                ]
+            ]
+        }
+    ],
+    "server-apps": [
+        {
+            "app": "qb-storage",
+            "port": "6015",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "qb_storage",
+            "config": "qb-storage_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "qb-api",
+            "port": "6011",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "qb_api",
+            "config": "qb-api_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "qb-ds",
+            "port": "6013",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "qb_ds",
+            "config": "qb-ds_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "qb-sorting-module",
+            "port": "6017",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "qb_logic",
+            "config": "qb-sorting-module_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "qb-frontend",
+            "port": "5555",
+            "ip": "0.0.0.0",
+            "extra": []
+        },
+        {
+            "app": "global-planner",
+            "port": "4010",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "navigation",
+            "config": "navigation_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "fixed-path-planner",
+            "port": "4020",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "input_gate_1",
+            "config": "navigation_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "fixed-path-planner",
+            "port": "4030",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "output_gate_1",
+            "config": "navigation_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "fixed-path-planner",
+            "port": "4050",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "cross_gate",
+            "config": "navigation_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "device-storage",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "main",
+            "config": "device-storage_cfg.yaml",
+            "extra": []
+        }
+    ],
+    "robot-apps": [
+        {
+            "app": "robot-nofi-simulator",
+            "port": "",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "0001",
+            "config": "robot-manager_cfg.yaml",
+            "extra": []
+        },
+        {
+            "app": "robot-sorting-module",
+            "port": "3020",
+            "ip": "0.0.0.0",
+            "partition": "pv",
+            "namespace": "0001",
+            "config": "robot-sorting-module_cfg.yaml",
+            "extra": []
+        }
+    ],
+    "scripts": [
+        {
+            "name": "tcp-scanner-sim-periodic-gen",
+            "command": [
+                "python3.8",
+                "./scripts/tcp-scanner-sim/pass_scanner_simulator.py"
+            ],
+            "arguments": [
+                [
+                    "--ip",
+                    "127.0.0.2"
+                ],
+                [
+                    "--port",
+                    "9001"
+                ],
+                [
+                    "--range-start",
+                    "0"
+                ],
+                [
+                    "--scanner-id",
+                    "0"
+                ],
+                [
+                    "--range-end",
+                    "20"
+                ],
+                [
+                    "--ziprange-start",
+                    "8010"
+                ],
+                [
+                    "--ziprange-end",
+                    "8050"
+                ],
+                [
+                    "--beep-speed",
+                    "5"
+                ],
+                [
+                    "--simulation-speed",
+                    "1"
+                ]
+            ]
+        }
+    ]
+}
