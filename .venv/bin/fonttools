@@ -1,4 +1,4 @@
-#!/home/timo/projects/VT-ECE/res-pvt-ai4spp/.venv/bin/python3
+#!/home/timo/projects/primevision/res-pvt-ai4spp/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

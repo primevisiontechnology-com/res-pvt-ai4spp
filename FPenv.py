@@ -70,9 +70,6 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
         if not torch.any(torch.eq(first_node, end_node)):
             break
 
-    # print("end_node: ", end_node)
-    # print("first_node: ", first_node)
-
     batch_indices = torch.arange(len(first_node))
     available = init_edges[batch_indices, first_node]
 
@@ -80,11 +77,17 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
     target = init_locs[batch_indices, end_node].unsqueeze(1)
     distance_to_target = torch.norm(init_locs - target, dim=-1, keepdim=True)
 
+
     # Initialize the index of the current node
     i = torch.zeros((*batch_size, 1), dtype=torch.int64, device=device)
 
     # Initialize the done mask
     done_mask = torch.zeros(batch_size, dtype=torch.bool, device=device)
+
+    # Initialize the visited nodes tensor
+    visited_nodes = torch.zeros(*batch_size, num_loc, dtype=torch.bool, device=device)
+
+    visited_nodes[batch_indices, first_node] = 1
 
     return TensorDict(
         {
@@ -97,6 +100,7 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
             "step_count": step_count,
             "i": i,
             "action_mask": available,
+            "visited": visited_nodes,
             "reward": torch.zeros((*batch_size, 1), dtype=torch.float32),
             "done_mask": done_mask,
         },
@@ -107,56 +111,37 @@ def _reset(self, td: Optional[TensorDict] = None, batch_size=None) -> TensorDict
 def _step(self, td: TensorDict) -> TensorDict:
     # Only update the non-done elements
     done_mask = td["done_mask"]
-    # td_masked = td.masked_select(~done_mask)
-    # print("td_masked action: ", td_masked["action"])
-    # print("td current node: ", td["current_node"])
+
     current_node = torch.where(~done_mask, td["action"], td["current_node"])
-    # print("current_node: ", current_node)
-    # update the step count only on non-done elements
+
     step_count = td["step_count"]
     step_count = torch.where(~done_mask, step_count + 1, step_count)
-    # print("step_count: ", step_count)
 
-    # current_node = td["action"]
-
-    # output visiting node
-    # first_node = current_node if td["i"].all() == 0 else td["first_node"]
-
-    # Mark the current node as visited
     available = get_action_mask(self, td)
+    
+    # Add the current node to the visited nodes
+    visited = td["visited"]
 
-    # Yifei: Allowing revisiting the current node
-    # Mask the current node to prevent revisiting
-    # available = available & ~td["current_node"].unsqueeze(-1).eq(
-    #     torch.arange(available.shape[-1], device=available.device))
-
-    # Create a tensor of batch indices
-    # batch_indices = torch.arange(len(current_node))
-
-    # Use advanced indexing to get the neighbors for each batch
-    # neighbors = td["edges"][batch_indices, current_node]
-
-    # Update the action_mask to only include the current node's neighbors
-    # available = available & neighbors
+    batch_indices = torch.arange(len(current_node))
+    visited[batch_indices, current_node] = 1
 
     done = current_node == td["end_node"]
     # Yifei: Change the 100 steps limits to 1000
     done |= step_count >= 1000
-    # print("done: ", done)
-
-    # done = torch.sum(td["action_mask"], dim=-1) == 0
 
     done_mask = done_mask | done
+
     # The reward is calculated outside via get_reward for efficiency, so we set it to 0 here
+    # reward = self.get_reward(td, td["action"])
     reward = torch.zeros_like(done)
 
     td.update(
         {
-            # "first_node": first_node,
             "step_count": step_count,
             "current_node": current_node,
             "i": td["i"] + 1,
             "action_mask": available,
+            "visited": visited,
             "reward": reward,
             "done": done,
             "done_mask": done_mask,
@@ -175,16 +160,8 @@ def get_action_mask(self, td: TensorDict) -> TensorDict:
     # Use advanced indexing to get the neighbors for each batch
     neighbors = td["edges"][batch_indices, current_node]
 
-    # Element-wise multiplication with the manhattan distance
-    # available = neighbors * td["manhattan_distance"][batch_indices, current_node]
     available = neighbors
 
-    # print("available: ", available)
-
-    # Apply the heuristic to the neighbors to get the action mask
-    # get the locations of the neighbors
-    # locs = td["locs"]
-    # locs_ordered = gather_by_index(locs, neighbors)
     return available
 
 
@@ -193,44 +170,34 @@ def get_reward(self, td, actions) -> TensorDict:
     step_count = td["step_count"]
     # if any of the batch element has reached maximum steps, set to infinity
     step_mask = step_count >= 1000
-    # give a reward of the step count, but inf for the non-done elements
-    reward = torch.where(step_mask, torch.tensor(-10000.0, dtype=torch.float32, device=step_count.device),
+    # Base reward is -step_count, and penalize heavily if step count exceeds 1000
+    reward = torch.where(step_mask, torch.tensor(-1000.0, dtype=torch.float32, device=step_count.device),
                          -step_count.float())
 
-    # Initialize penalty for repetition
-    repetition_penalty = torch.tensor(-100.0, dtype=torch.float32, device=step_count.device)
+    # Get the current node
+    # current_node = td["current_node"]
 
-    # Reward for new nodes
-    exploration_reward = torch.tensor(50.0, dtype=torch.float32, device=step_count.device)
+    # Check which nodes were previously visited
+    visited = td["visited"]
+    # batch_indices = torch.arange(len(current_node))
 
-    # Track and penalize for repeated visits
-    current_node = td["current_node"]
+    # Check if the current node is newly visited
+    # is_newly_visited = ~visited[batch_indices, current_node]
 
-    if "visited_nodes" not in td:
-        # Initialize visited_nodes if not already present, using a list of sets to track visited nodes for each batch element
-        td["visited_nodes"] = [set() for _ in range(current_node.size(0))]
-    visited_nodes = td["visited_nodes"]
+    # new_visit_reward = torch.where(is_newly_visited, torch.tensor(10.0, dtype=torch.float32, device=reward.device), 
+    #                                torch.tensor(0.0, dtype=torch.float32, device=reward.device))
 
-    # Check for repetition
-    repetition_mask = torch.tensor([current_node[i].item() in visited_nodes[i] for i in range(current_node.size(0))],
-                                   device=step_count.device)
+    # Calculate the number of uniquely visited nodes for each batch by summing the visited nodes
+    num_unique_visits = visited.sum(dim=-1).float()  # Sum across the nodes dimension to get the unique count
 
-    # Apply repetition penalty
-    repetition_penalty_applied = torch.where(repetition_mask, repetition_penalty,
-                                             torch.tensor(0.0, dtype=torch.float32, device=step_count.device))
-    # Apply exploration reward
-    exploration_reward_applied = torch.where(repetition_mask,
-                                             torch.tensor(0.0, dtype=torch.float32, device=step_count.device),
-                                             exploration_reward)
+    exploration_reward = torch.where(step_mask, num_unique_visits * 1.0,
+                                     torch.tensor(0.0, dtype=torch.float32, device=step_count.device))
+    
+    reward += exploration_reward
 
-    # Update visited nodes
-    for i in range(current_node.size(0)):
-        visited_nodes[i].add(current_node[i].item())
-
-    # Combine the original reward with the repetition penalty
-    reward += repetition_penalty_applied + exploration_reward_applied
-
-    print("reward: ", reward)
+    # Add the new visit reward to the total reward
+    # reward += new_visit_reward
+    # print("Reward: ", reward)
     return reward
 
 
@@ -469,7 +436,7 @@ def process_fp(self, fp_path: str):
     for i in range(len(self.cellsList)):
         cell = self.cellsList[i]
 
-        if cell.getType() == "entry_and_exit":
+        if cell.getType() == "input":
             self.start_nodes.append(i)
         elif cell.getType() == "target":
             self.end_nodes.append(i)
