@@ -8986,7 +8986,7 @@
         },
         {
           "id": "node_1",
-          "type": "target",
+          "type": "input",
           "clear_distance": 0.2,
           "target_reservation_cost_linear": 10,
           "target_reservation_cost_quad": 0,
@@ -9347,7 +9347,7 @@
         },
         {
           "id": "node_2",
-          "type": "target",
+          "type": "input",
           "clear_distance": 0.2,
           "target_reservation_cost_linear": 10,
           "target_reservation_cost_quad": 0,
@@ -9624,7 +9624,7 @@
         },
         {
           "id": "node_3",
-          "type": "target",
+          "type": "input",
           "clear_distance": 0.2,
           "target_reservation_cost_linear": 10,
           "target_reservation_cost_quad": 0,

@@ -2527,11 +2527,5 @@
   },
   "/input_gate_2/node_3": {
     "type": "input"
-  },
-  "/output_gate_2/node_501b": {
-    "type": "homing"
-  },
-  "/output_gate_2/node_502b": {
-    "type": "homing"
   }
 }
