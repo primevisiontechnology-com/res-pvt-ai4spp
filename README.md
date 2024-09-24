@@ -28,8 +28,8 @@ We've made our environment observable with beautiful visualizations. Actions are
 
 1. Install the required packages:
 ```bash
-pip install rl4co
-pip install torch
+pip install rl4co==0.3.3
+pip install torch==2.3.0
 pip install matplotlib
 ```
 
