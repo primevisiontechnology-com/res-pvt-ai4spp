@@ -1,28 +1,23 @@
 # RoboNav: Robot Path Planning Using Reinforcement Learning and Attention Models
 
-Welcome to our project! We're using the Deep Reinforcement Learning to solve the Shortest Path Problem (SPP) in package sorting warehouse Floorplans. Our AI agent is training hard, learning from its mistakes, and getting better and better at finding the shortest path. 
+Welcome to our project! We're using the Deep Reinforcement Learning (DRL) models to solve the Shortest Path Problem (SPP) in package sorting warehouse Floorplans. Our AI agent is training hard, learning from its mistakes, and getting better and better at finding the shortest path. 
 
 ## What's Inside? 🎁
 
 - **Deep Reinforcement Learning**: Our AI agent learns by interacting with its environment.
-- **Grid Environment**: Our agent operates in a grid environment with and without obstacles.
-- **Real Floorplan**: Our agent operates in the real floorplan environment with nodes and connections.
+- **Warehouse Floorplan Environment**: Our agent operates in the package sorting warehouse floorplan environment with nodes and connections.
 - **Random Start and Target Nodes**: Each episode is a new challenge, with start and target nodes randomly picked.
 - **Greedy Rollouts**: During the inference step, our agent performs greedy rollouts on the available actions.
-- **A-Star Search Baseline**: We compare our trained policies with an A-star search baseline to confirm validity. It's like a reality check, but for AI!
-- **Masking and embeddings**: Graph Neural Networks can use masking and embeddings to learn from the graph structure. We're using them to improve our agent's performance.
-
-This is a visualistion of the mask with the graph structure, without the mask the agent would be able to see the whole graph structure, with the mask the agent can only see the nodes that are connected to the current node.
-![alt text](media/adjancyMatrix1.png)
-
-The obstacle mask is used to prevent the agent from moving through obstacles. These edges are removed from the adjacency matrix.
-![alt text](media/adjencyMatrix2.png)
+- **A-Star Search Baseline**: We compare our trained models with an A-star search baseline to evaluate their performances.
 
 ## Visualizations 🎨
 
-We've made our environment observable with beautiful visualizations. Actions are shown in red, start and target nodes in green and red, and the edges in the adjacency matrix of the graph in green.
+Our experimental setup consists of four robot routing problems in a warehouse, each modeled as a graph with nodes and edges. Each graph contains three types of nodes: input, target, and normal. The input node (black dot) represents a pick-up station, indicated by a green "IN" box. The target nodes (red dot) represent the drop-off points, accompanied by a red box displaying a destination number. Normal nodes (blue dots) function as connectors between neighboring nodes, creating pathways through the environment. For example, the graph layout for the Env 1 is illustrated in the figure below. 
+![alt text](images/ICRA/Env_1.png)
 
-![alt text](media/goodDRLOutputDynamic.png)
+The DRL models are compared against the baseline A* search algorithm in all four environments. To comprehensively evaluate performance, 400 runs are conducted in each environment, using random pairs of start and target nodes. A representative test run for the Env 1 was visualized below to compare the actions of the trained DRL model and the A* search algorithm,
+
+![alt text](images/ICRA/Env_1_Result.png)
 
 ## How to Use 🚀
 
