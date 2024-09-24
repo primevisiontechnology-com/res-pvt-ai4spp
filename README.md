@@ -15,10 +15,6 @@ Welcome to our project! We're using the Deep Reinforcement Learning (DRL) models
 Our experimental setup consists of four robot routing problems in a warehouse, each modeled as a graph with nodes and edges. Each graph contains three types of nodes: input, target, and normal. The input node (black dot) represents a pick-up station, indicated by a green "IN" box. The target nodes (red dot) represent the drop-off points, accompanied by a red box displaying a destination number. Normal nodes (blue dots) function as connectors between neighboring nodes, creating pathways through the environment. For example, the graph layout for the Env 1 is illustrated in the figure below. 
 ![alt text](images/ICRA/Env_1.png)
 
-The DRL models are compared against the baseline A* search algorithm in all four environments. To comprehensively evaluate performance, 400 runs are conducted in each environment, using random pairs of start and target nodes. A representative test run for the Env 1 was visualized below to compare the actions of the trained DRL model and the A* search algorithm,
-
-![alt text](images/ICRA/Env_1_Result.png)
-
 ## How to Use 🚀
 
 1. Install the required packages:
@@ -46,11 +42,12 @@ from Floorplan_Codes.utils import get_paths
 
 ## Results 📊
 
-The result histogram for the static environment.
-![alt text](media/plotHistogram.png)
+The DRL models are compared against the baseline A* search algorithm in all four environments. To comprehensively evaluate performance, 400 runs are conducted in each environment, using random pairs of start and target nodes. A representative test run for the Env 1 was visualized below to compare the actions of the trained DRL model and the A* search algorithm,
 
-The result histogram for the dynamic environment.
-![alt text](media/plotHistDyn.png)
+![alt text](images/ICRA/Env_1_Result.png)
+
+There is a positive correlation between graph complexity, particularly graph density, and the performance of trained DRL models. The figure below displays the performance as the number of episodes in which the DRL model outperformed the A* search method versus the graph density of different environments.
+![alt text](images/positive_runs_complexity_plot.png)
 
 ## Authors 🧑‍💻
 Yifei Zhou (y.zhou@primevisiontechnology.com)
