@@ -1,6 +1,6 @@
-# Deep Reinforcement Learning for Robot Pathfinding in real Floorplans
+# RoboNav: Robot Path Planning Using Reinforcement Learning and Attention Models
 
-Welcome to our project! We're using the Deep Reinforcement Learning to solve the Shortest Path Problem (SPP) in real Floorplans used in Prime Vision Technologies. Our AI agent is training hard, learning from its mistakes, and getting better and better at finding the shortest path. 
+Welcome to our project! We're using the Deep Reinforcement Learning to solve the Shortest Path Problem (SPP) in package sorting warehouse Floorplans. Our AI agent is training hard, learning from its mistakes, and getting better and better at finding the shortest path. 
 
 ## What's Inside? 🎁
 
