@@ -36,11 +36,13 @@ from FPenv import FPEnv
 from SPPenv import SPPEnv
 from astar import AStarSearch
 from SPPembeddings import SPPInitEmbedding, SPPContext, StaticEmbedding
-from SPPv2env import SPPv2Env # import the dynamic environment
+from rl4co.models.zoo import AttentionModel, AutoregressivePolicy, POMO, POMOPolicy
 from Floorplan_Codes.utils import get_paths
 ```
 
-3. The jupyter notebook 'exploration.ipynb' contains the code to train the Deep Reinforcement Learning algorithms and make predictions on real floorplans. It contains the code for the training and evaluation of the AM and POMO methods.
+3. The jupyter notebook 'codes/TrainOnFloorplan.ipynb' contains the codes to train the Deep Reinforcement Learning algorithms with the warehouse floorplans. This script initializes the DRL attention model and policy, read the floorplan json file and create a reinforcement learning environment, then trains the DRL model on this environment. You can tune parameters of the attention model and the policy and retrain the DRL model to achieve better results for a new floorplan.
+   
+4. The jupyter notebook 'codes/TestOnFP.ipynb' contains the codes to load a trained DRL model and an environment to perform 400 test runs with random start and target nodes. Besides, the notebook also provides the visualizations of the generated path (actions) from the start node to the target node using both DRL model and A* search baseline algorithm. Moreover, the notebook displays a histogram of costs for the environment showing the frequencies of cost in all test runs. Finally, a plot of validation reward over epochs for different models is also displayed in the notebook.
 
 ## Results 📊
 
@@ -49,8 +51,6 @@ The result histogram for the static environment.
 
 The result histogram for the dynamic environment.
 ![alt text](media/plotHistDyn.png)
-
-The results of real floorplan predictions can be found in the last cell of 'exploration.ipynb'.
 
 ## Authors 🧑‍💻
 Yifei Zhou (y.zhou@primevisiontechnology.com)
