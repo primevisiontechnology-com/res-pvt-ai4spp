@@ -31,6 +31,8 @@ We've made our environment observable with beautiful visualizations. Actions are
 pip install rl4co==0.3.3
 pip install torch==2.3.0
 pip install matplotlib
+pip install numpy
+pip install sklearn
 ```
 
 2. Import the libraries:
